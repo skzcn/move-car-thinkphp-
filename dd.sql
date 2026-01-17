@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50648
 File Encoding         : 65001
 
-Date: 2026-01-16 17:21:52
+Date: 2026-01-17 17:58:26
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -110,17 +110,21 @@ CREATE TABLE `system_config` (
   `title` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of system_config
 -- ----------------------------
-INSERT INTO `system_config` VALUES ('1', 'site_title', '我的网站', 'basic', '网站标题');
+INSERT INTO `system_config` VALUES ('1', 'site_title', 'Move-Car 专业的挪车服务平台', 'basic', '网站标题');
 INSERT INTO `system_config` VALUES ('2', 'smtp_host', 'smtp.qq.com', 'email', 'SMTP服务器');
 INSERT INTO `system_config` VALUES ('3', 'smtp_port', '465', 'email', 'SMTP端口');
 INSERT INTO `system_config` VALUES ('4', 'smtp_user', '', 'email', 'SMTP用户名');
 INSERT INTO `system_config` VALUES ('5', 'smtp_pass', '', 'email', 'SMTP密码');
 INSERT INTO `system_config` VALUES ('6', 'smtp_from', '', 'email', '发件人邮箱');
+INSERT INTO `system_config` VALUES ('7', 'site_keywords', '11', 'basic', '网站关键词');
+INSERT INTO `system_config` VALUES ('8', 'site_description', '11', 'basic', '网站描述');
+INSERT INTO `system_config` VALUES ('9', 'site_contact', '11', 'basic', '联系方式');
+INSERT INTO `system_config` VALUES ('10', 'site_icp', '11', 'basic', 'ICP备案号');
 
 -- ----------------------------
 -- Table structure for users
@@ -133,6 +137,7 @@ CREATE TABLE `users` (
   `nickname` varchar(50) DEFAULT NULL COMMENT '昵称/姓名',
   `plate` varchar(20) DEFAULT NULL COMMENT '车牌号',
   `mobile` varchar(20) DEFAULT NULL COMMENT '手机号',
+  `email` varchar(100) DEFAULT NULL COMMENT '邮箱',
   `bark_url` varchar(255) DEFAULT NULL COMMENT 'Bark通知地址',
   `server_chan_key` varchar(100) DEFAULT NULL COMMENT 'Server酱Key',
   `status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '状态 1:正常 0:禁用',
@@ -145,8 +150,8 @@ CREATE TABLE `users` (
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES ('1', '1', null, '1', '11', '', '', 'SCT130806T7ozf9WqlpzvuJ0fAnmv0Uzr3', '1', '1768400766', '1768401170');
-INSERT INTO `users` VALUES ('2', '123', '$2y$12$wGElyjOl/iyDbbQLtumoZe0QnYSxvy1Facu8RA7omVElc.lzzofGK', '', '', '', '', '', '1', '1768402880', '1768440694');
+INSERT INTO `users` VALUES ('1', '1', null, '1', '11', '', null, '', 'SCT130806T7ozf9WqlpzvuJ0fAnmv0Uzr3', '1', '1768400766', '1768401170');
+INSERT INTO `users` VALUES ('2', '123', '$2y$12$wGElyjOl/iyDbbQLtumoZe0QnYSxvy1Facu8RA7omVElc.lzzofGK', '', '', '', null, '', '', '1', '1768402880', '1768440694');
 
 -- ----------------------------
 -- Table structure for user_notices
