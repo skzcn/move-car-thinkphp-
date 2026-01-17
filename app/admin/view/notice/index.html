@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>公告管理</title>
+    <link rel="stylesheet" href="/static/layui/css/layui.css" media="all">
+</head>
+<body>
+<div style="padding: 15px;">
+    <div class="layui-btn-group">
+        <button class="layui-btn" id="btn-add">发布公告</button>
+    </div>
+    <table class="layui-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>标题</th>
+                <th>发布时间</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            {volist name="list" id="vo"}
+            <tr>
+                <td>{$vo.id}</td>
+                <td>{$vo.title}</td>
+                <td>{$vo.create_time|date='Y-m-d H:i'}</td>
+                <td>
+                    <button class="layui-btn layui-btn-danger layui-btn-xs btn-delete" data-id="{$vo.id}">删除</button>
+                </td>
+            </tr>
+            {/volist}
+        </tbody>
+    </table>
+    {$list|raw}
+</div>
+
+<script src="/static/layui/layui.js"></script>
+<script>
+layui.use(['layer', 'jquery'], function(){
+    var layer = layui.layer;
+    var $ = layui.jquery;
+
+    $('#btn-add').on('click', function(){
+        layer.open({
+            type: 2,
+            title: '发布公告',
+            area: ['600px', '500px'],
+            content: '{:url("add")}'
+        });
+    });
+
+    $('.btn-delete').on('click', function(){
+        var id = $(this).data('id');
+        layer.confirm('确定删除该公告吗？', function(index){
+            $.post('{:url("delete")}', {id: id}, function(res){
+                if(res.code === 0){
+                    layer.msg(res.msg, {icon: 1, time: 1000}, function(){
+                        location.reload();
+                    });
+                } else {
+                    layer.msg(res.msg, {icon: 2});
+                }
+            });
+        });
+    });
+});
+</script>
+</body>
+</html>
