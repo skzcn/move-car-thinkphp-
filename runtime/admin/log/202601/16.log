@@ -1,0 +1,59 @@
+[2026-01-16T11:41:28+08:00][sql] CONNECT:[ UseTime:0.026797s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-16T11:41:28+08:00][sql] SHOW FULL COLUMNS FROM `admins` [ RunTime:0.005946s ]
+[2026-01-16T11:41:28+08:00][sql] SELECT * FROM `admins` WHERE  `username` = 'skzcn' LIMIT 1 [ RunTime:0.000226s ]
+[2026-01-16T11:41:35+08:00][sql] CONNECT:[ UseTime:0.000971s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-16T11:41:35+08:00][sql] SHOW FULL COLUMNS FROM `admins` [ RunTime:0.006090s ]
+[2026-01-16T11:41:35+08:00][sql] SELECT * FROM `admins` WHERE  `username` = 'admin' LIMIT 1 [ RunTime:0.000235s ]
+[2026-01-16T11:41:44+08:00][sql] CONNECT:[ UseTime:0.001544s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-16T11:41:44+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.005687s ]
+[2026-01-16T11:41:44+08:00][sql] SELECT * FROM `users` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000269s ]
+[2026-01-16T11:41:44+08:00][sql] SELECT COUNT(*) AS think_count FROM `users` [ RunTime:0.000484s ]
+[2026-01-16T11:41:46+08:00][sql] CONNECT:[ UseTime:0.000685s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-16T11:41:46+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.003731s ]
+[2026-01-16T11:41:46+08:00][sql] SELECT * FROM `users` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000241s ]
+[2026-01-16T11:41:53+08:00][sql] CONNECT:[ UseTime:0.000981s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-16T11:41:53+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.004936s ]
+[2026-01-16T11:41:53+08:00][sql] SELECT * FROM `users` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000259s ]
+[2026-01-16T11:41:53+08:00][sql] SELECT COUNT(*) AS think_count FROM `users` [ RunTime:0.000177s ]
+[2026-01-16T11:50:11+08:00][sql] CONNECT:[ UseTime:0.001504s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-16T11:50:11+08:00][sql] CREATE TABLE IF NOT EXISTS `system_config` (
+          `id` int(11) NOT NULL AUTO_INCREMENT,
+          `name` varchar(50) NOT NULL COMMENT '配置名称',
+          `value` text COMMENT '配置值',
+          `config_group` varchar(20) DEFAULT 'basic' COMMENT '分组',
+          `title` varchar(50) DEFAULT NULL COMMENT '配置说明',
+          PRIMARY KEY (`id`),
+          UNIQUE KEY `name` (`name`)
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='系统配置表'; [ RunTime:0.001352s ]
+[2026-01-16T11:50:11+08:00][sql] SHOW FULL COLUMNS FROM `system_config` [ RunTime:0.003668s ]
+[2026-01-16T11:50:11+08:00][sql] SELECT * FROM `system_config` WHERE  `name` = 'site_title' LIMIT 1 [ RunTime:0.000235s ]
+[2026-01-16T11:50:11+08:00][sql] INSERT INTO `system_config` SET `name` = 'site_title' , `value` = '我的网站' , `config_group` = 'basic' , `title` = '网站标题' [ RunTime:0.002340s ]
+[2026-01-16T11:50:11+08:00][sql] SELECT * FROM `system_config` WHERE  `name` = 'smtp_host' LIMIT 1 [ RunTime:0.000291s ]
+[2026-01-16T11:50:11+08:00][sql] INSERT INTO `system_config` SET `name` = 'smtp_host' , `value` = 'smtp.qq.com' , `config_group` = 'email' , `title` = 'SMTP服务器' [ RunTime:0.002276s ]
+[2026-01-16T11:50:11+08:00][sql] SELECT * FROM `system_config` WHERE  `name` = 'smtp_port' LIMIT 1 [ RunTime:0.000275s ]
+[2026-01-16T11:50:11+08:00][sql] INSERT INTO `system_config` SET `name` = 'smtp_port' , `value` = '465' , `config_group` = 'email' , `title` = 'SMTP端口' [ RunTime:0.003540s ]
+[2026-01-16T11:50:11+08:00][sql] SELECT * FROM `system_config` WHERE  `name` = 'smtp_user' LIMIT 1 [ RunTime:0.000276s ]
+[2026-01-16T11:50:11+08:00][sql] INSERT INTO `system_config` SET `name` = 'smtp_user' , `value` = '' , `config_group` = 'email' , `title` = 'SMTP用户名' [ RunTime:0.003352s ]
+[2026-01-16T11:50:11+08:00][sql] SELECT * FROM `system_config` WHERE  `name` = 'smtp_pass' LIMIT 1 [ RunTime:0.000291s ]
+[2026-01-16T11:50:11+08:00][sql] INSERT INTO `system_config` SET `name` = 'smtp_pass' , `value` = '' , `config_group` = 'email' , `title` = 'SMTP密码' [ RunTime:0.002271s ]
+[2026-01-16T11:50:11+08:00][sql] SELECT * FROM `system_config` WHERE  `name` = 'smtp_from' LIMIT 1 [ RunTime:0.000272s ]
+[2026-01-16T11:50:11+08:00][sql] INSERT INTO `system_config` SET `name` = 'smtp_from' , `value` = '' , `config_group` = 'email' , `title` = '发件人邮箱' [ RunTime:0.002235s ]
+[2026-01-16T11:51:51+08:00][sql] CONNECT:[ UseTime:0.000939s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-16T11:51:51+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.003800s ]
+[2026-01-16T11:51:51+08:00][sql] SELECT * FROM `users` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000242s ]
+[2026-01-16T11:51:51+08:00][sql] SELECT COUNT(*) AS think_count FROM `users` [ RunTime:0.000182s ]
+[2026-01-16T11:51:52+08:00][sql] CONNECT:[ UseTime:0.000767s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-16T11:51:52+08:00][sql] SHOW FULL COLUMNS FROM `ads` [ RunTime:0.004870s ]
+[2026-01-16T11:51:52+08:00][sql] SELECT COUNT(*) AS think_count FROM `ads` [ RunTime:0.000200s ]
+[2026-01-16T11:51:52+08:00][sql] SELECT * FROM `ads` ORDER BY `sort` DESC,`id` DESC LIMIT 0,10 [ RunTime:0.000308s ]
+[2026-01-16T11:51:52+08:00][sql] CONNECT:[ UseTime:0.000804s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-16T11:51:52+08:00][sql] SHOW FULL COLUMNS FROM `notices` [ RunTime:0.004729s ]
+[2026-01-16T11:51:52+08:00][sql] SELECT COUNT(*) AS think_count FROM `notices` [ RunTime:0.000268s ]
+[2026-01-16T11:51:52+08:00][sql] SELECT * FROM `notices` ORDER BY `id` DESC LIMIT 0,15 [ RunTime:0.000202s ]
+[2026-01-16T11:51:54+08:00][sql] CONNECT:[ UseTime:0.000719s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-16T11:51:54+08:00][sql] SHOW FULL COLUMNS FROM `admins` [ RunTime:0.003526s ]
+[2026-01-16T11:51:54+08:00][sql] SELECT * FROM `admins` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000228s ]
+[2026-01-16T11:51:54+08:00][sql] SELECT COUNT(*) AS think_count FROM `admins` [ RunTime:0.000210s ]
+[2026-01-16T11:53:13+08:00][sql] CONNECT:[ UseTime:0.001227s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-16T11:53:13+08:00][sql] SHOW FULL COLUMNS FROM `system_config` [ RunTime:0.004293s ]
+[2026-01-16T11:53:13+08:00][sql] SELECT `value`,`name` FROM `system_config` [ RunTime:0.000491s ]

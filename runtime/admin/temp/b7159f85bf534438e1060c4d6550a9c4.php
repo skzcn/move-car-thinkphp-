@@ -1,0 +1,88 @@
+<?php /*a:1:{s:47:"E:\Users\web\tp\app\admin\view\login\index.html";i:1768404886;}*/ ?>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>后台登录</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="/static/layui/css/layui.css" media="all">
+    <style>
+        body {background-color: #f2f2f2;}
+        .login-main {width: 360px; margin: 100px auto; background: #fff; padding: 20px; border-radius: 4px; box-shadow: 0 0 10px rgba(0,0,0,0.1);}
+        .login-header {text-align: center; margin-bottom: 20px;}
+        .login-main .layui-form-item { position: relative; }
+        .login-main .layui-icon { position: absolute; left: 10px; top: 10px; color: #999; }
+        .login-main .layui-input { padding-left: 35px; }
+        
+        .captcha-item {
+            display: flex !important;
+            align-items: stretch !important;
+            gap: 10px;
+        }
+        .captcha-item .layui-input {
+            flex: 1;
+        }
+        .captcha-img {
+            cursor: pointer;
+            border: 1px solid #e6e6e6;
+            height: 38px !important;
+            width: 110px !important;
+            box-sizing: border-box;
+            display: block;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-main">
+    <div class="login-header">
+        <h2>后台管理系统</h2>
+    </div>
+    <form class="layui-form" action="">
+        <div class="layui-form-item">
+            <label class="layui-icon layui-icon-username" for="username"></label>
+            <input type="text" name="username" lay-verify="required" placeholder="用户名" autocomplete="off" class="layui-input">
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-icon layui-icon-password" for="password"></label>
+            <input type="password" name="password" lay-verify="required" placeholder="密码" autocomplete="off" class="layui-input">
+        </div>
+        <div class="layui-form-item captcha-item">
+            <label class="layui-icon layui-icon-vercode" for="captcha"></label>
+            <input type="text" name="captcha" lay-verify="required" placeholder="验证码" autocomplete="off" class="layui-input">
+            <img src="<?php echo captcha_src(); ?>" alt="captcha" class="captcha-img" onclick="this.src='<?php echo captcha_src(); ?>?'+Math.random()">
+        </div>
+        <div class="layui-form-item">
+            <button class="layui-btn layui-btn-fluid" lay-submit lay-filter="login">登 录</button>
+        </div>
+    </form>
+</div>
+
+<script src="/static/layui/layui.js"></script>
+<script>
+layui.use(['form', 'layer', 'jquery'], function(){
+    var form = layui.form;
+    var layer = layui.layer;
+    var $ = layui.jquery;
+
+    // 监听提交
+    form.on('submit(login)', function(data){
+        $.post("<?php echo url('check'); ?>", data.field, function(res){
+            if(res.code === 0){
+                layer.msg(res.msg, {icon: 1, time: 1000}, function(){
+                    location.href = res.url;
+                });
+            } else {
+                layer.msg(res.msg, {icon: 2});
+                $('.captcha-img').click();
+            }
+        });
+        return false;
+    });
+});
+</script>
+</body>
+</html>

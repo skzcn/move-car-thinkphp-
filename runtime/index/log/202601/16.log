@@ -1,0 +1,29 @@
+[2026-01-16T12:14:04+08:00][sql] CONNECT:[ UseTime:0.000880s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-16T12:14:04+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.004518s ]
+[2026-01-16T12:14:04+08:00][sql] SELECT * FROM `users` WHERE  `username` = '123' LIMIT 1 [ RunTime:0.000354s ]
+[2026-01-16T12:14:08+08:00][sql] CONNECT:[ UseTime:0.000784s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-16T12:14:08+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.003274s ]
+[2026-01-16T12:14:08+08:00][sql] SELECT * FROM `users` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000240s ]
+[2026-01-16T12:14:08+08:00][sql] SHOW FULL COLUMNS FROM `user_notices` [ RunTime:0.004210s ]
+[2026-01-16T12:14:08+08:00][sql] SELECT COUNT(*) AS think_count FROM `user_notices` WHERE  `user_id` = 2  AND `is_read` = 0 [ RunTime:0.000362s ]
+[2026-01-16T12:14:08+08:00][sql] SELECT `n`.`id`,`n`.`title`,`n`.`content`,`n`.`create_time`,`un`.`is_read` FROM `user_notices` `un` INNER JOIN `notices` `n` ON `un`.`notice_id`=`n`.`id` WHERE  `un`.`user_id` = '2' ORDER BY `n`.`create_time` DESC [ RunTime:0.000381s ]
+[2026-01-16T12:14:50+08:00][sql] CONNECT:[ UseTime:0.000705s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-16T12:14:50+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.005862s ]
+[2026-01-16T12:14:50+08:00][sql] SELECT * FROM `users` WHERE  `username` = '123' LIMIT 1 [ RunTime:0.000254s ]
+[2026-01-16T12:14:53+08:00][sql] CONNECT:[ UseTime:0.000703s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-16T12:14:53+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.003717s ]
+[2026-01-16T12:14:53+08:00][sql] SELECT * FROM `users` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000242s ]
+[2026-01-16T12:14:53+08:00][sql] SHOW FULL COLUMNS FROM `user_notices` [ RunTime:0.002942s ]
+[2026-01-16T12:14:53+08:00][sql] SELECT COUNT(*) AS think_count FROM `user_notices` WHERE  `user_id` = 2  AND `is_read` = 0 [ RunTime:0.000248s ]
+[2026-01-16T12:14:53+08:00][sql] SELECT `n`.`id`,`n`.`title`,`n`.`content`,`n`.`create_time`,`un`.`is_read` FROM `user_notices` `un` INNER JOIN `notices` `n` ON `un`.`notice_id`=`n`.`id` WHERE  `un`.`user_id` = '2' ORDER BY `n`.`create_time` DESC [ RunTime:0.000249s ]
+[2026-01-16T12:20:03+08:00][sql] CONNECT:[ UseTime:0.000829s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-16T12:20:03+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.005373s ]
+[2026-01-16T12:20:03+08:00][sql] SELECT * FROM `users` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000266s ]
+[2026-01-16T12:20:03+08:00][sql] SHOW FULL COLUMNS FROM `user_notices` [ RunTime:0.004462s ]
+[2026-01-16T12:20:03+08:00][sql] SELECT COUNT(*) AS think_count FROM `user_notices` WHERE  `user_id` = 2  AND `is_read` = 0 [ RunTime:0.000274s ]
+[2026-01-16T12:20:03+08:00][sql] SELECT `n`.`id`,`n`.`title`,`n`.`content`,`n`.`create_time`,`un`.`is_read` FROM `user_notices` `un` INNER JOIN `notices` `n` ON `un`.`notice_id`=`n`.`id` WHERE  `un`.`user_id` = '2' ORDER BY `n`.`create_time` DESC [ RunTime:0.000250s ]
+[2026-01-16T12:20:28+08:00][error] [0]模板文件不存在:E:\Users\web\tp\app\index\view\login\index.html[E:\Users\web\tp\vendor\topthink\think-view\src\Think.php:128]
+[2026-01-16T12:20:37+08:00][error] [0]模板文件不存在:E:\Users\web\tp\app\index\view\login\index.html[E:\Users\web\tp\vendor\topthink\think-view\src\Think.php:128]
+[2026-01-16T23:48:20+08:00][sql] CONNECT:[ UseTime:0.001421s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-16T23:48:20+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.005020s ]
+[2026-01-16T23:48:20+08:00][sql] SELECT * FROM `users` WHERE  `email` = '316936330@qq.com' LIMIT 1 [ RunTime:0.000305s ]

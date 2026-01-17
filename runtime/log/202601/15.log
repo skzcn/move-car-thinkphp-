@@ -1,0 +1,19 @@
+[2026-01-15T10:42:10+08:00][sql] CONNECT:[ UseTime:0.022607s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-15T10:42:10+08:00][sql] DESCRIBE admins [ RunTime:0.005023s ]
+[2026-01-15T10:42:42+08:00][sql] CONNECT:[ UseTime:0.019778s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-15T10:42:42+08:00][sql] SHOW FULL COLUMNS FROM `admins` [ RunTime:0.003505s ]
+[2026-01-15T10:42:42+08:00][sql] SELECT * FROM `admins` [ RunTime:0.000207s ]
+[2026-01-15T11:04:20+08:00][sql] CONNECT:[ UseTime:0.002815s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-15T11:04:20+08:00][sql] SHOW FULL COLUMNS FROM `ads` [ RunTime:0.005082s ]
+[2026-01-15T11:04:20+08:00][sql] SELECT * FROM `ads` [ RunTime:0.000277s ]
+[2026-01-15T11:04:53+08:00][sql] CONNECT:[ UseTime:0.001371s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-15T11:04:53+08:00][sql] SHOW FULL COLUMNS FROM `ads` [ RunTime:0.006773s ]
+[2026-01-15T11:04:54+08:00][sql] UPDATE `ads`  SET `status` = 0  WHERE  `id` = 1 [ RunTime:0.002614s ]
+[2026-01-15T11:04:54+08:00][sql] SELECT * FROM `ads` [ RunTime:0.000322s ]
+[2026-01-15T11:14:46+08:00][sql] CONNECT:[ UseTime:0.001463s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-15T11:14:46+08:00][sql] SHOW FULL COLUMNS FROM `ads` [ RunTime:0.039744s ]
+[2026-01-15T11:14:46+08:00][sql] SELECT * FROM `ads` [ RunTime:0.000193s ]
+[2026-01-15T11:14:58+08:00][sql] CONNECT:[ UseTime:0.001316s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-15T11:14:58+08:00][sql] SHOW FULL COLUMNS FROM `ads` [ RunTime:0.003521s ]
+[2026-01-15T11:14:58+08:00][sql] UPDATE `ads`  SET `status` = 1  WHERE  ( 1=1 ) [ RunTime:0.002500s ]
+[2026-01-15T11:14:58+08:00][sql] SELECT * FROM `ads` [ RunTime:0.000219s ]

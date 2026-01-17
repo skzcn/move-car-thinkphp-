@@ -1,0 +1,122 @@
+<?php /*a:1:{s:46:"E:\Users\web\tp\app\admin\view\user\index.html";i:1768400854;}*/ ?>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>车主管理</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="/static/layui/css/layui.css" media="all">
+</head>
+<body>
+
+<div class="layui-fluid" style="padding: 15px;">
+    <div class="layui-card">
+        <div class="layui-card-header">车主列表</div>
+        <div class="layui-card-body">
+            <div class="layui-form layui-card-header layuiadmin-card-header-auto">
+                <div class="layui-form-item">
+                    <div class="layui-inline">
+                        <input type="text" name="keyword" placeholder="用户名/姓名/车牌/手机" autocomplete="off" class="layui-input">
+                    </div>
+                    <div class="layui-inline">
+                        <button class="layui-btn" lay-submit lay-filter="search">搜索</button>
+                        <button class="layui-btn layui-btn-normal" id="addBtn">添加车主</button>
+                    </div>
+                </div>
+            </div>
+            
+            <table id="userTable" lay-filter="userTable"></table>
+            
+            <script type="text/html" id="barDemo">
+                <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+                <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+                <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="view">挪车页</a>
+            </script>
+        </div>
+    </div>
+</div>
+
+<script src="/static/layui/layui.js"></script>
+<script>
+layui.use(['table', 'form', 'layer', 'jquery'], function(){
+    var table = layui.table;
+    var form = layui.form;
+    var layer = layui.layer;
+    var $ = layui.jquery;
+
+    table.render({
+        elem: '#userTable',
+        url: "<?php echo url('index'); ?>",
+        page: true,
+        cols: [[
+            {field: 'id', title: 'ID', width: 80, sort: true},
+            {field: 'username', title: '用户名', width: 120},
+            {field: 'nickname', title: '姓名', width: 120},
+            {field: 'plate', title: '车牌号', width: 120},
+            {field: 'mobile', title: '手机号', width: 120},
+            {field: 'status', title: '状态', width: 80, templet: function(d){
+                return d.status == 1 ? '<span class="layui-badge layui-bg-green">正常</span>' : '<span class="layui-badge">禁用</span>';
+            }},
+            {field: 'create_time', title: '创建时间', width: 160, templet: function(d){
+                return layui.util.toDateString(d.create_time * 1000);
+            }},
+            {fixed: 'right', title: '操作', toolbar: '#barDemo', width: 200}
+        ]]
+    });
+
+    // 搜索
+    form.on('submit(search)', function(data){
+        table.reload('userTable', {
+            where: data.field,
+            page: {curr: 1}
+        });
+        return false;
+    });
+
+    // 添加
+    $('#addBtn').click(function(){
+        layer.open({
+            type: 2,
+            title: '添加车主',
+            content: "<?php echo url('add'); ?>",
+            area: ['600px', '500px'],
+            end: function(){
+                table.reload('userTable');
+            }
+        });
+    });
+
+    // 工具栏
+    table.on('tool(userTable)', function(obj){
+        var data = obj.data;
+        if(obj.event === 'del'){
+            layer.confirm('真的删除行么', function(index){
+                $.post("<?php echo url('delete'); ?>", {id: data.id}, function(res){
+                    if(res.code === 0){
+                        obj.del();
+                        layer.close(index);
+                    } else {
+                        layer.msg(res.msg);
+                    }
+                });
+            });
+        } else if(obj.event === 'edit'){
+            layer.open({
+                type: 2,
+                title: '编辑车主',
+                content: "<?php echo url('edit'); ?>?id=" + data.id,
+                area: ['600px', '500px'],
+                end: function(){
+                    table.reload('userTable');
+                }
+            });
+        } else if(obj.event === 'view'){
+            window.open("/index.php/index/user/index?u=" + data.username);
+        }
+    });
+});
+</script>
+</body>
+</html>

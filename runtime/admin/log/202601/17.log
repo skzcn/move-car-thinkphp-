@@ -1,0 +1,78 @@
+[2026-01-17T17:16:18+08:00][sql] CONNECT:[ UseTime:0.008165s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-17T17:16:18+08:00][sql] SHOW FULL COLUMNS FROM `admins` [ RunTime:0.006142s ]
+[2026-01-17T17:16:18+08:00][sql] SELECT * FROM `admins` WHERE  `username` = 'admin' LIMIT 1 [ RunTime:0.000248s ]
+[2026-01-17T17:16:21+08:00][sql] CONNECT:[ UseTime:0.000928s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-17T17:16:21+08:00][sql] SHOW FULL COLUMNS FROM `system_config` [ RunTime:0.005716s ]
+[2026-01-17T17:16:21+08:00][sql] SELECT `value`,`name` FROM `system_config` [ RunTime:0.000220s ]
+[2026-01-17T17:16:27+08:00][sql] CONNECT:[ UseTime:0.000977s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-17T17:16:27+08:00][sql] SHOW FULL COLUMNS FROM `ads` [ RunTime:0.006921s ]
+[2026-01-17T17:16:27+08:00][sql] SELECT COUNT(*) AS think_count FROM `ads` [ RunTime:0.000215s ]
+[2026-01-17T17:16:27+08:00][sql] SELECT * FROM `ads` ORDER BY `sort` DESC,`id` DESC LIMIT 0,10 [ RunTime:0.000212s ]
+[2026-01-17T17:16:28+08:00][sql] CONNECT:[ UseTime:0.000963s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-17T17:16:28+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.006595s ]
+[2026-01-17T17:16:28+08:00][sql] SELECT * FROM `users` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000251s ]
+[2026-01-17T17:16:28+08:00][sql] SELECT COUNT(*) AS think_count FROM `users` [ RunTime:0.000310s ]
+[2026-01-17T17:16:34+08:00][sql] CONNECT:[ UseTime:0.000713s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-17T17:16:34+08:00][sql] SHOW FULL COLUMNS FROM `ads` [ RunTime:0.003906s ]
+[2026-01-17T17:16:34+08:00][sql] SELECT * FROM `ads` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000392s ]
+[2026-01-17T17:16:36+08:00][sql] CONNECT:[ UseTime:0.000734s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-17T17:16:36+08:00][sql] SHOW FULL COLUMNS FROM `ads` [ RunTime:0.005432s ]
+[2026-01-17T17:16:36+08:00][sql] SELECT COUNT(*) AS think_count FROM `ads` [ RunTime:0.000216s ]
+[2026-01-17T17:16:36+08:00][sql] SELECT * FROM `ads` ORDER BY `sort` DESC,`id` DESC LIMIT 0,10 [ RunTime:0.000196s ]
+[2026-01-17T17:16:37+08:00][sql] CONNECT:[ UseTime:0.000704s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-17T17:16:37+08:00][sql] SHOW FULL COLUMNS FROM `notices` [ RunTime:0.006713s ]
+[2026-01-17T17:16:37+08:00][sql] SELECT COUNT(*) AS think_count FROM `notices` [ RunTime:0.000224s ]
+[2026-01-17T17:16:37+08:00][sql] SELECT * FROM `notices` ORDER BY `id` DESC LIMIT 0,15 [ RunTime:0.000257s ]
+[2026-01-17T17:16:42+08:00][sql] CONNECT:[ UseTime:0.000671s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-17T17:16:42+08:00][sql] SHOW FULL COLUMNS FROM `admins` [ RunTime:0.005345s ]
+[2026-01-17T17:16:42+08:00][sql] SELECT * FROM `admins` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000210s ]
+[2026-01-17T17:16:42+08:00][sql] SELECT COUNT(*) AS think_count FROM `admins` [ RunTime:0.000208s ]
+[2026-01-17T17:16:45+08:00][sql] CONNECT:[ UseTime:0.000889s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-17T17:16:45+08:00][sql] SHOW FULL COLUMNS FROM `admins` [ RunTime:0.003951s ]
+[2026-01-17T17:16:45+08:00][sql] SELECT * FROM `admins` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000261s ]
+[2026-01-17T17:16:48+08:00][sql] CONNECT:[ UseTime:0.000721s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-17T17:16:48+08:00][sql] SHOW FULL COLUMNS FROM `admins` [ RunTime:0.004144s ]
+[2026-01-17T17:16:48+08:00][sql] SELECT * FROM `admins` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000233s ]
+[2026-01-17T17:16:48+08:00][sql] SELECT COUNT(*) AS think_count FROM `admins` [ RunTime:0.000173s ]
+[2026-01-17T17:17:29+08:00][sql] CONNECT:[ UseTime:0.000704s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-17T17:17:29+08:00][sql] SHOW FULL COLUMNS FROM `system_config` [ RunTime:0.008880s ]
+[2026-01-17T17:17:29+08:00][sql] UPDATE `system_config`  SET `value` = 'Move-Car-挪车通知更，隐私保护。一键通知'  WHERE  `name` = 'site_title' [ RunTime:0.002957s ]
+[2026-01-17T17:21:45+08:00][sql] CONNECT:[ UseTime:0.000890s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-17T17:21:45+08:00][sql] SHOW FULL COLUMNS FROM `system_config` [ RunTime:0.004753s ]
+[2026-01-17T17:21:45+08:00][sql] UPDATE `system_config`  SET `value` = 'Move-Car 专业的挪车服务平台'  WHERE  `name` = 'site_title' [ RunTime:0.002768s ]
+[2026-01-17T17:26:36+08:00][sql] CONNECT:[ UseTime:0.000767s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-17T17:26:36+08:00][sql] SHOW FULL COLUMNS FROM `system_config` [ RunTime:0.003444s ]
+[2026-01-17T17:26:36+08:00][sql] SELECT `value`,`name` FROM `system_config` [ RunTime:0.000200s ]
+[2026-01-17T17:26:41+08:00][sql] CONNECT:[ UseTime:0.000711s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-17T17:26:41+08:00][sql] SHOW FULL COLUMNS FROM `system_config` [ RunTime:0.004441s ]
+[2026-01-17T17:26:41+08:00][sql] UPDATE `system_config`  SET `value` = 'Move-Car 专业的挪车服务平台'  WHERE  `name` = 'site_title' [ RunTime:0.002735s ]
+[2026-01-17T17:26:41+08:00][sql] UPDATE `system_config`  SET `value` = '11'  WHERE  `name` = 'site_keywords' [ RunTime:0.000221s ]
+[2026-01-17T17:26:41+08:00][sql] UPDATE `system_config`  SET `value` = '11'  WHERE  `name` = 'site_description' [ RunTime:0.000164s ]
+[2026-01-17T17:26:41+08:00][sql] UPDATE `system_config`  SET `value` = '11'  WHERE  `name` = 'site_contact' [ RunTime:0.000162s ]
+[2026-01-17T17:26:41+08:00][sql] UPDATE `system_config`  SET `value` = '11'  WHERE  `name` = 'site_icp' [ RunTime:0.000165s ]
+[2026-01-17T17:33:33+08:00][sql] CONNECT:[ UseTime:0.000771s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-17T17:33:33+08:00][sql] SHOW FULL COLUMNS FROM `system_config` [ RunTime:0.005108s ]
+[2026-01-17T17:33:33+08:00][sql] UPDATE `system_config`  SET `value` = 'Move-Car 专业的挪车服务平台'  WHERE  `name` = 'site_title' [ RunTime:0.002703s ]
+[2026-01-17T17:33:33+08:00][sql] UPDATE `system_config`  SET `value` = '11'  WHERE  `name` = 'site_keywords' [ RunTime:0.002171s ]
+[2026-01-17T17:33:33+08:00][sql] UPDATE `system_config`  SET `value` = '11'  WHERE  `name` = 'site_description' [ RunTime:0.002158s ]
+[2026-01-17T17:33:33+08:00][sql] UPDATE `system_config`  SET `value` = '11'  WHERE  `name` = 'site_contact' [ RunTime:0.002101s ]
+[2026-01-17T17:33:33+08:00][sql] UPDATE `system_config`  SET `value` = '11'  WHERE  `name` = 'site_icp' [ RunTime:0.002054s ]
+[2026-01-17T17:33:40+08:00][sql] CONNECT:[ UseTime:0.000821s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-17T17:33:40+08:00][sql] SHOW FULL COLUMNS FROM `system_config` [ RunTime:0.005222s ]
+[2026-01-17T17:33:40+08:00][sql] SELECT `value`,`name` FROM `system_config` [ RunTime:0.000192s ]
+[2026-01-17T17:38:00+08:00][sql] CONNECT:[ UseTime:0.000739s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-17T17:38:00+08:00][sql] SHOW FULL COLUMNS FROM `admins` [ RunTime:0.005334s ]
+[2026-01-17T17:38:00+08:00][sql] SELECT * FROM `admins` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000207s ]
+[2026-01-17T17:38:00+08:00][sql] SELECT COUNT(*) AS think_count FROM `admins` [ RunTime:0.000159s ]
+[2026-01-17T17:38:01+08:00][sql] CONNECT:[ UseTime:0.000718s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-17T17:38:01+08:00][sql] SHOW FULL COLUMNS FROM `notices` [ RunTime:0.004208s ]
+[2026-01-17T17:38:01+08:00][sql] SELECT COUNT(*) AS think_count FROM `notices` [ RunTime:0.000201s ]
+[2026-01-17T17:38:01+08:00][sql] SELECT * FROM `notices` ORDER BY `id` DESC LIMIT 0,15 [ RunTime:0.000140s ]
+[2026-01-17T17:38:01+08:00][sql] CONNECT:[ UseTime:0.015825s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-17T17:38:01+08:00][sql] SHOW FULL COLUMNS FROM `ads` [ RunTime:0.003089s ]
+[2026-01-17T17:38:01+08:00][sql] SELECT COUNT(*) AS think_count FROM `ads` [ RunTime:0.000173s ]
+[2026-01-17T17:38:01+08:00][sql] SELECT * FROM `ads` ORDER BY `sort` DESC,`id` DESC LIMIT 0,10 [ RunTime:0.000153s ]
+[2026-01-17T17:38:02+08:00][sql] CONNECT:[ UseTime:0.000704s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-17T17:38:02+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.003417s ]
+[2026-01-17T17:38:02+08:00][sql] SELECT * FROM `users` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000259s ]
+[2026-01-17T17:38:02+08:00][sql] SELECT COUNT(*) AS think_count FROM `users` [ RunTime:0.000157s ]

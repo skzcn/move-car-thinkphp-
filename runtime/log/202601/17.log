@@ -1,0 +1,13 @@
+[2026-01-17T17:29:20+08:00][sql] CONNECT:[ UseTime:0.002100s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-17T17:29:20+08:00][sql] SHOW FULL COLUMNS FROM `system_config` [ RunTime:0.006522s ]
+[2026-01-17T17:29:20+08:00][sql] SELECT * FROM `system_config` [ RunTime:0.000263s ]
+[2026-01-17T17:29:38+08:00][sql] CONNECT:[ UseTime:0.001297s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-17T17:29:38+08:00][sql] SHOW FULL COLUMNS FROM `system_config` [ RunTime:0.004163s ]
+[2026-01-17T17:29:38+08:00][sql] SELECT * FROM `system_config` WHERE  `name` = 'site_keywords' LIMIT 1 [ RunTime:0.000225s ]
+[2026-01-17T17:29:38+08:00][sql] INSERT INTO `system_config` SET `name` = 'site_keywords' , `value` = '' , `config_group` = 'basic' , `title` = '网站关键词' [ RunTime:0.002632s ]
+[2026-01-17T17:29:38+08:00][sql] SELECT * FROM `system_config` WHERE  `name` = 'site_description' LIMIT 1 [ RunTime:0.000258s ]
+[2026-01-17T17:29:38+08:00][sql] INSERT INTO `system_config` SET `name` = 'site_description' , `value` = '' , `config_group` = 'basic' , `title` = '网站描述' [ RunTime:0.002116s ]
+[2026-01-17T17:29:38+08:00][sql] SELECT * FROM `system_config` WHERE  `name` = 'site_contact' LIMIT 1 [ RunTime:0.000197s ]
+[2026-01-17T17:29:38+08:00][sql] INSERT INTO `system_config` SET `name` = 'site_contact' , `value` = '' , `config_group` = 'basic' , `title` = '联系方式' [ RunTime:0.002741s ]
+[2026-01-17T17:29:38+08:00][sql] SELECT * FROM `system_config` WHERE  `name` = 'site_icp' LIMIT 1 [ RunTime:0.000232s ]
+[2026-01-17T17:29:38+08:00][sql] INSERT INTO `system_config` SET `name` = 'site_icp' , `value` = '' , `config_group` = 'basic' , `title` = 'ICP备案号' [ RunTime:0.002879s ]

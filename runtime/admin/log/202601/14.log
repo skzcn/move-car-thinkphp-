@@ -1,0 +1,309 @@
+[2026-01-14T21:22:20+08:00][error] [10501]SQLSTATE[HY000] [1045] Access denied for user 'username'@'localhost' (using password: YES)[E:\Users\web\tp\vendor\topthink\think-orm\src\db\PDOConnection.php:861]
+[2026-01-14T21:22:39+08:00][error] [10501]SQLSTATE[HY000] [1045] Access denied for user 'username'@'localhost' (using password: YES)[E:\Users\web\tp\vendor\topthink\think-orm\src\db\PDOConnection.php:861]
+[2026-01-14T22:10:34+08:00][error] [10501]SQLSTATE[HY000] [1045] Access denied for user 'username'@'localhost' (using password: YES)[E:\Users\web\tp\vendor\topthink\think-orm\src\db\PDOConnection.php:861]
+[2026-01-14T22:10:39+08:00][error] [10501]SQLSTATE[HY000] [1045] Access denied for user 'username'@'localhost' (using password: YES)[E:\Users\web\tp\vendor\topthink\think-orm\src\db\PDOConnection.php:861]
+[2026-01-14T22:10:46+08:00][error] [10501]SQLSTATE[HY000] [1045] Access denied for user 'username'@'localhost' (using password: YES)[E:\Users\web\tp\vendor\topthink\think-orm\src\db\PDOConnection.php:861]
+[2026-01-14T22:10:53+08:00][error] [10501]SQLSTATE[HY000] [1045] Access denied for user 'username'@'localhost' (using password: YES)[E:\Users\web\tp\vendor\topthink\think-orm\src\db\PDOConnection.php:861]
+[2026-01-14T22:12:28+08:00][error] [10501]SQLSTATE[HY000] [1045] Access denied for user 'username'@'localhost' (using password: YES)[E:\Users\web\tp\vendor\topthink\think-orm\src\db\PDOConnection.php:861]
+[2026-01-14T22:15:18+08:00][sql] CONNECT:[ UseTime:0.000688s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T22:15:18+08:00][sql] SHOW FULL COLUMNS FROM `admins` [ RunTime:0.003992s ]
+[2026-01-14T22:15:18+08:00][sql] SELECT * FROM `admins` WHERE  `username` = 'admin' LIMIT 1 [ RunTime:0.000238s ]
+[2026-01-14T22:15:26+08:00][sql] CONNECT:[ UseTime:0.000675s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T22:15:26+08:00][sql] SHOW FULL COLUMNS FROM `admins` [ RunTime:0.003311s ]
+[2026-01-14T22:15:26+08:00][sql] SELECT * FROM `admins` WHERE  `username` = 'admin' LIMIT 1 [ RunTime:0.000234s ]
+[2026-01-14T22:17:08+08:00][sql] CONNECT:[ UseTime:0.000735s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T22:17:08+08:00][sql] SHOW FULL COLUMNS FROM `admins` [ RunTime:0.003598s ]
+[2026-01-14T22:17:08+08:00][sql] SELECT * FROM `admins` WHERE  `username` = 'admin' LIMIT 1 [ RunTime:0.000236s ]
+[2026-01-14T22:24:11+08:00][sql] CONNECT:[ UseTime:0.000816s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T22:24:11+08:00][sql] SHOW FULL COLUMNS FROM `admins` [ RunTime:0.003492s ]
+[2026-01-14T22:24:11+08:00][sql] SELECT * FROM `admins` WHERE  `username` = 'admin' LIMIT 1 [ RunTime:0.000234s ]
+[2026-01-14T22:24:15+08:00][sql] CONNECT:[ UseTime:0.000886s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T22:24:15+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.004160s ]
+[2026-01-14T22:24:15+08:00][sql] SELECT * FROM `users` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000265s ]
+[2026-01-14T22:24:15+08:00][sql] SELECT COUNT(*) AS think_count FROM `users` [ RunTime:0.000244s ]
+[2026-01-14T22:24:20+08:00][sql] CONNECT:[ UseTime:0.001024s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T22:24:20+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.003657s ]
+[2026-01-14T22:24:20+08:00][sql] SELECT * FROM `users` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000254s ]
+[2026-01-14T22:24:20+08:00][sql] SELECT COUNT(*) AS think_count FROM `users` [ RunTime:0.000210s ]
+[2026-01-14T22:24:37+08:00][sql] CONNECT:[ UseTime:0.000787s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T22:24:37+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.003862s ]
+[2026-01-14T22:24:37+08:00][sql] SELECT * FROM `users` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000254s ]
+[2026-01-14T22:24:37+08:00][sql] SELECT COUNT(*) AS think_count FROM `users` [ RunTime:0.000207s ]
+[2026-01-14T22:24:38+08:00][error] [0]语法错误: unexpected token "default"[E:\Users\web\tp\runtime\admin\temp\5d4a2643ac90e972606f12ae891cad42.php:54]
+[2026-01-14T22:24:48+08:00][sql] CONNECT:[ UseTime:0.000760s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T22:24:48+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.003287s ]
+[2026-01-14T22:24:48+08:00][sql] SELECT * FROM `users` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000222s ]
+[2026-01-14T22:24:48+08:00][sql] SELECT COUNT(*) AS think_count FROM `users` [ RunTime:0.000184s ]
+[2026-01-14T22:24:49+08:00][sql] CONNECT:[ UseTime:0.000783s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T22:24:49+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.003611s ]
+[2026-01-14T22:24:49+08:00][sql] SELECT * FROM `users` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000286s ]
+[2026-01-14T22:24:49+08:00][sql] SELECT COUNT(*) AS think_count FROM `users` [ RunTime:0.000180s ]
+[2026-01-14T22:24:52+08:00][sql] CONNECT:[ UseTime:0.000612s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T22:24:52+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.003372s ]
+[2026-01-14T22:24:52+08:00][sql] SELECT * FROM `users` WHERE  (  ( `username` LIKE '%1%' OR `nickname` LIKE '%1%' OR `plate` LIKE '%1%' OR `mobile` LIKE '%1%' ) ) ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000263s ]
+[2026-01-14T22:24:52+08:00][sql] SELECT COUNT(*) AS think_count FROM `users` WHERE  (  ( `username` LIKE '%1%' OR `nickname` LIKE '%1%' OR `plate` LIKE '%1%' OR `mobile` LIKE '%1%' ) ) [ RunTime:0.000209s ]
+[2026-01-14T22:25:57+08:00][sql] CONNECT:[ UseTime:0.001879s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T22:25:57+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.004211s ]
+[2026-01-14T22:25:57+08:00][sql] SELECT * FROM `users` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000358s ]
+[2026-01-14T22:25:57+08:00][sql] SELECT COUNT(*) AS think_count FROM `users` [ RunTime:0.000267s ]
+[2026-01-14T22:26:06+08:00][sql] CONNECT:[ UseTime:0.000766s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T22:26:06+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.003416s ]
+[2026-01-14T22:26:06+08:00][sql] INSERT INTO `users` SET `username` = '1' , `nickname` = '1' , `plate` = '11' , `mobile` = '' , `bark_url` = '' , `server_chan_key` = '11' , `status` = 1 , `create_time` = 1768400766 , `update_time` = 1768400766 [ RunTime:0.002867s ]
+[2026-01-14T22:26:07+08:00][sql] CONNECT:[ UseTime:0.000907s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T22:26:07+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.003424s ]
+[2026-01-14T22:26:07+08:00][sql] SELECT * FROM `users` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000244s ]
+[2026-01-14T22:26:07+08:00][sql] SELECT COUNT(*) AS think_count FROM `users` [ RunTime:0.000185s ]
+[2026-01-14T22:28:28+08:00][sql] CONNECT:[ UseTime:0.000749s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T22:28:28+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.003731s ]
+[2026-01-14T22:28:28+08:00][sql] SELECT * FROM `users` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000242s ]
+[2026-01-14T22:28:28+08:00][sql] SELECT COUNT(*) AS think_count FROM `users` [ RunTime:0.000202s ]
+[2026-01-14T22:28:31+08:00][sql] CONNECT:[ UseTime:0.000907s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T22:28:31+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.004729s ]
+[2026-01-14T22:28:31+08:00][sql] SELECT * FROM `users` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000315s ]
+[2026-01-14T22:28:31+08:00][sql] SELECT COUNT(*) AS think_count FROM `users` [ RunTime:0.000241s ]
+[2026-01-14T22:31:03+08:00][sql] CONNECT:[ UseTime:0.001156s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T22:31:03+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.003552s ]
+[2026-01-14T22:31:03+08:00][sql] SELECT * FROM `users` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000245s ]
+[2026-01-14T22:31:03+08:00][sql] SELECT COUNT(*) AS think_count FROM `users` [ RunTime:0.000210s ]
+[2026-01-14T22:31:18+08:00][sql] CONNECT:[ UseTime:0.000797s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T22:31:18+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.004171s ]
+[2026-01-14T22:31:18+08:00][sql] SELECT * FROM `users` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000316s ]
+[2026-01-14T22:32:50+08:00][sql] CONNECT:[ UseTime:0.011749s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T22:32:50+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.003454s ]
+[2026-01-14T22:32:50+08:00][sql] SELECT * FROM `users` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000307s ]
+[2026-01-14T22:32:50+08:00][sql] UPDATE `users`  SET `username` = '1' , `nickname` = '1' , `plate` = '11' , `mobile` = '' , `bark_url` = '' , `server_chan_key` = 'SCT130806T7ozf9WqlpzvuJ0fAnmv0Uzr3' , `status` = 1 , `update_time` = 1768401170  WHERE  `id` = 1 [ RunTime:0.002696s ]
+[2026-01-14T22:32:52+08:00][sql] CONNECT:[ UseTime:0.000719s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T22:32:52+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.003415s ]
+[2026-01-14T22:32:52+08:00][sql] SELECT * FROM `users` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000241s ]
+[2026-01-14T22:32:52+08:00][sql] SELECT COUNT(*) AS think_count FROM `users` [ RunTime:0.000197s ]
+[2026-01-14T23:00:57+08:00][sql] CONNECT:[ UseTime:0.001385s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:00:57+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.004800s ]
+[2026-01-14T23:00:57+08:00][sql] SELECT * FROM `users` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000252s ]
+[2026-01-14T23:00:57+08:00][sql] SELECT COUNT(*) AS think_count FROM `users` [ RunTime:0.000356s ]
+[2026-01-14T23:00:59+08:00][sql] CONNECT:[ UseTime:0.016163s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:00:59+08:00][sql] SHOW FULL COLUMNS FROM `admins` [ RunTime:0.005022s ]
+[2026-01-14T23:00:59+08:00][sql] SELECT * FROM `admins` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000352s ]
+[2026-01-14T23:00:59+08:00][sql] SELECT COUNT(*) AS think_count FROM `admins` [ RunTime:0.000374s ]
+[2026-01-14T23:01:05+08:00][sql] CONNECT:[ UseTime:0.000743s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:01:05+08:00][sql] SHOW FULL COLUMNS FROM `admins` [ RunTime:0.003758s ]
+[2026-01-14T23:01:05+08:00][sql] SELECT * FROM `admins` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000245s ]
+[2026-01-14T23:01:05+08:00][sql] SELECT COUNT(*) AS think_count FROM `admins` [ RunTime:0.000203s ]
+[2026-01-14T23:01:07+08:00][sql] CONNECT:[ UseTime:0.000763s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:01:07+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.003865s ]
+[2026-01-14T23:01:07+08:00][sql] SELECT * FROM `users` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000247s ]
+[2026-01-14T23:01:07+08:00][sql] SELECT COUNT(*) AS think_count FROM `users` [ RunTime:0.000192s ]
+[2026-01-14T23:01:40+08:00][sql] CONNECT:[ UseTime:0.000721s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:01:40+08:00][sql] SHOW FULL COLUMNS FROM `admins` [ RunTime:0.004340s ]
+[2026-01-14T23:01:40+08:00][sql] SELECT * FROM `admins` WHERE  `username` = '123' LIMIT 1 [ RunTime:0.000258s ]
+[2026-01-14T23:01:50+08:00][sql] CONNECT:[ UseTime:0.000942s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:01:50+08:00][sql] SHOW FULL COLUMNS FROM `admins` [ RunTime:0.003663s ]
+[2026-01-14T23:01:50+08:00][sql] SELECT * FROM `admins` WHERE  `username` = 'admin' LIMIT 1 [ RunTime:0.000234s ]
+[2026-01-14T23:01:53+08:00][sql] CONNECT:[ UseTime:0.000710s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:01:53+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.003479s ]
+[2026-01-14T23:01:53+08:00][sql] SELECT * FROM `users` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000274s ]
+[2026-01-14T23:01:53+08:00][sql] SELECT COUNT(*) AS think_count FROM `users` [ RunTime:0.000207s ]
+[2026-01-14T23:01:56+08:00][sql] CONNECT:[ UseTime:0.000778s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:01:56+08:00][sql] SHOW FULL COLUMNS FROM `admins` [ RunTime:0.003629s ]
+[2026-01-14T23:01:56+08:00][sql] SELECT * FROM `admins` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000272s ]
+[2026-01-14T23:01:56+08:00][sql] SELECT COUNT(*) AS think_count FROM `admins` [ RunTime:0.000225s ]
+[2026-01-14T23:07:15+08:00][sql] CONNECT:[ UseTime:0.000895s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:07:15+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.004238s ]
+[2026-01-14T23:07:15+08:00][sql] SELECT * FROM `users` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000240s ]
+[2026-01-14T23:07:15+08:00][sql] SELECT COUNT(*) AS think_count FROM `users` [ RunTime:0.000197s ]
+[2026-01-14T23:07:21+08:00][sql] CONNECT:[ UseTime:0.000882s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:07:21+08:00][sql] SHOW FULL COLUMNS FROM `admins` [ RunTime:0.004719s ]
+[2026-01-14T23:07:21+08:00][sql] SELECT * FROM `admins` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000245s ]
+[2026-01-14T23:07:21+08:00][sql] SELECT COUNT(*) AS think_count FROM `admins` [ RunTime:0.000228s ]
+[2026-01-14T23:23:33+08:00][sql] CONNECT:[ UseTime:0.000797s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:23:33+08:00][sql] SHOW FULL COLUMNS FROM `admins` [ RunTime:0.003895s ]
+[2026-01-14T23:23:33+08:00][sql] SELECT * FROM `admins` WHERE  `username` = 'admin' LIMIT 1 [ RunTime:0.000263s ]
+[2026-01-14T23:23:36+08:00][sql] CONNECT:[ UseTime:0.000802s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:23:36+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.004742s ]
+[2026-01-14T23:23:36+08:00][sql] SELECT * FROM `users` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000247s ]
+[2026-01-14T23:23:36+08:00][sql] SELECT COUNT(*) AS think_count FROM `users` [ RunTime:0.000193s ]
+[2026-01-14T23:23:41+08:00][sql] CONNECT:[ UseTime:0.000822s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:23:41+08:00][sql] SHOW FULL COLUMNS FROM `admins` [ RunTime:0.004520s ]
+[2026-01-14T23:23:41+08:00][sql] SELECT * FROM `admins` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000233s ]
+[2026-01-14T23:23:41+08:00][sql] SELECT COUNT(*) AS think_count FROM `admins` [ RunTime:0.000206s ]
+[2026-01-14T23:23:47+08:00][sql] CONNECT:[ UseTime:0.000777s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:23:47+08:00][sql] SHOW FULL COLUMNS FROM `admins` [ RunTime:0.003681s ]
+[2026-01-14T23:23:47+08:00][sql] SELECT * FROM `admins` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000266s ]
+[2026-01-14T23:23:47+08:00][sql] SELECT COUNT(*) AS think_count FROM `admins` [ RunTime:0.000200s ]
+[2026-01-14T23:24:01+08:00][sql] CONNECT:[ UseTime:0.000963s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:24:01+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.009234s ]
+[2026-01-14T23:24:01+08:00][sql] SELECT * FROM `users` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000263s ]
+[2026-01-14T23:24:01+08:00][sql] SELECT COUNT(*) AS think_count FROM `users` [ RunTime:0.000211s ]
+[2026-01-14T23:30:14+08:00][sql] CONNECT:[ UseTime:0.000847s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:30:14+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.003545s ]
+[2026-01-14T23:30:14+08:00][sql] SELECT * FROM `users` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000285s ]
+[2026-01-14T23:30:14+08:00][sql] SELECT COUNT(*) AS think_count FROM `users` [ RunTime:0.000214s ]
+[2026-01-14T23:30:14+08:00][sql] CONNECT:[ UseTime:0.000832s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:30:14+08:00][sql] SHOW FULL COLUMNS FROM `admins` [ RunTime:0.004175s ]
+[2026-01-14T23:30:14+08:00][sql] SELECT * FROM `admins` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000246s ]
+[2026-01-14T23:30:14+08:00][sql] SELECT COUNT(*) AS think_count FROM `admins` [ RunTime:0.000193s ]
+[2026-01-14T23:36:04+08:00][sql] CONNECT:[ UseTime:0.027156s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:36:04+08:00][sql] SHOW FULL COLUMNS FROM `admins` [ RunTime:0.003349s ]
+[2026-01-14T23:36:04+08:00][sql] SELECT * FROM `admins` WHERE  `username` = 'admin' LIMIT 1 [ RunTime:0.000256s ]
+[2026-01-14T23:36:07+08:00][sql] CONNECT:[ UseTime:0.001306s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:36:07+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.003820s ]
+[2026-01-14T23:36:07+08:00][sql] SELECT * FROM `users` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000240s ]
+[2026-01-14T23:36:07+08:00][sql] SELECT COUNT(*) AS think_count FROM `users` [ RunTime:0.000181s ]
+[2026-01-14T23:36:15+08:00][sql] CONNECT:[ UseTime:0.000768s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:36:15+08:00][sql] SHOW FULL COLUMNS FROM `admins` [ RunTime:0.003397s ]
+[2026-01-14T23:36:15+08:00][sql] SELECT * FROM `admins` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000235s ]
+[2026-01-14T23:36:15+08:00][sql] SELECT COUNT(*) AS think_count FROM `admins` [ RunTime:0.000188s ]
+[2026-01-14T23:36:16+08:00][sql] CONNECT:[ UseTime:0.000761s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:36:16+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.003461s ]
+[2026-01-14T23:36:16+08:00][sql] SELECT * FROM `users` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000242s ]
+[2026-01-14T23:36:16+08:00][sql] SELECT COUNT(*) AS think_count FROM `users` [ RunTime:0.000190s ]
+[2026-01-14T23:42:20+08:00][sql] CONNECT:[ UseTime:0.000896s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:42:20+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.003775s ]
+[2026-01-14T23:42:20+08:00][sql] SELECT * FROM `users` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000335s ]
+[2026-01-14T23:42:20+08:00][sql] SELECT COUNT(*) AS think_count FROM `users` [ RunTime:0.000191s ]
+[2026-01-14T23:42:33+08:00][sql] CONNECT:[ UseTime:0.000743s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:42:33+08:00][sql] SHOW FULL COLUMNS FROM `admins` [ RunTime:0.003811s ]
+[2026-01-14T23:42:33+08:00][sql] SELECT * FROM `admins` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000277s ]
+[2026-01-14T23:42:33+08:00][sql] SELECT COUNT(*) AS think_count FROM `admins` [ RunTime:0.000214s ]
+[2026-01-14T23:42:52+08:00][sql] CONNECT:[ UseTime:0.000812s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:42:52+08:00][sql] SHOW FULL COLUMNS FROM `admins` [ RunTime:0.004306s ]
+[2026-01-14T23:42:52+08:00][sql] SELECT * FROM `admins` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000261s ]
+[2026-01-14T23:42:52+08:00][sql] SELECT COUNT(*) AS think_count FROM `admins` [ RunTime:0.000198s ]
+[2026-01-14T23:42:53+08:00][sql] CONNECT:[ UseTime:0.000968s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:42:53+08:00][sql] SHOW FULL COLUMNS FROM `admins` [ RunTime:0.003691s ]
+[2026-01-14T23:42:53+08:00][sql] SELECT * FROM `admins` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000285s ]
+[2026-01-14T23:42:55+08:00][sql] CONNECT:[ UseTime:0.000955s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:42:55+08:00][sql] SHOW FULL COLUMNS FROM `admins` [ RunTime:0.004279s ]
+[2026-01-14T23:42:55+08:00][sql] SELECT * FROM `admins` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000254s ]
+[2026-01-14T23:42:55+08:00][sql] SELECT COUNT(*) AS think_count FROM `admins` [ RunTime:0.000248s ]
+[2026-01-14T23:45:16+08:00][sql] CONNECT:[ UseTime:0.001012s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:45:16+08:00][sql] SHOW FULL COLUMNS FROM `ads` [ RunTime:0.004229s ]
+[2026-01-14T23:45:16+08:00][sql] SELECT COUNT(*) AS think_count FROM `ads` [ RunTime:0.000241s ]
+[2026-01-14T23:45:17+08:00][sql] CONNECT:[ UseTime:0.000779s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:45:17+08:00][sql] SHOW FULL COLUMNS FROM `ads` [ RunTime:0.005486s ]
+[2026-01-14T23:45:17+08:00][sql] SELECT * FROM `ads` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000373s ]
+[2026-01-14T23:46:05+08:00][sql] CONNECT:[ UseTime:0.000888s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:46:05+08:00][sql] SHOW FULL COLUMNS FROM `ads` [ RunTime:0.008461s ]
+[2026-01-14T23:46:05+08:00][error] [10500]数据表字段不存在:[file][E:\Users\web\tp\vendor\topthink\think-orm\src\db\Builder.php:83]
+[2026-01-14T23:46:09+08:00][sql] CONNECT:[ UseTime:0.000969s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:46:09+08:00][sql] SHOW FULL COLUMNS FROM `ads` [ RunTime:0.004453s ]
+[2026-01-14T23:46:09+08:00][error] [10500]数据表字段不存在:[file][E:\Users\web\tp\vendor\topthink\think-orm\src\db\Builder.php:83]
+[2026-01-14T23:46:09+08:00][sql] CONNECT:[ UseTime:0.000805s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:46:09+08:00][sql] SHOW FULL COLUMNS FROM `ads` [ RunTime:0.004534s ]
+[2026-01-14T23:46:09+08:00][error] [10500]数据表字段不存在:[file][E:\Users\web\tp\vendor\topthink\think-orm\src\db\Builder.php:83]
+[2026-01-14T23:46:09+08:00][sql] CONNECT:[ UseTime:0.000792s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:46:09+08:00][sql] SHOW FULL COLUMNS FROM `ads` [ RunTime:0.006017s ]
+[2026-01-14T23:46:09+08:00][error] [10500]数据表字段不存在:[file][E:\Users\web\tp\vendor\topthink\think-orm\src\db\Builder.php:83]
+[2026-01-14T23:46:09+08:00][sql] CONNECT:[ UseTime:0.000653s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:46:09+08:00][sql] SHOW FULL COLUMNS FROM `ads` [ RunTime:0.004233s ]
+[2026-01-14T23:46:09+08:00][error] [10500]数据表字段不存在:[file][E:\Users\web\tp\vendor\topthink\think-orm\src\db\Builder.php:83]
+[2026-01-14T23:46:10+08:00][sql] CONNECT:[ UseTime:0.000917s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:46:10+08:00][sql] SHOW FULL COLUMNS FROM `ads` [ RunTime:0.003970s ]
+[2026-01-14T23:46:10+08:00][error] [10500]数据表字段不存在:[file][E:\Users\web\tp\vendor\topthink\think-orm\src\db\Builder.php:83]
+[2026-01-14T23:46:10+08:00][sql] CONNECT:[ UseTime:0.000804s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:46:10+08:00][sql] SHOW FULL COLUMNS FROM `ads` [ RunTime:0.003672s ]
+[2026-01-14T23:46:10+08:00][error] [10500]数据表字段不存在:[file][E:\Users\web\tp\vendor\topthink\think-orm\src\db\Builder.php:83]
+[2026-01-14T23:46:10+08:00][sql] CONNECT:[ UseTime:0.000715s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:46:10+08:00][sql] SHOW FULL COLUMNS FROM `ads` [ RunTime:0.003753s ]
+[2026-01-14T23:46:10+08:00][error] [10500]数据表字段不存在:[file][E:\Users\web\tp\vendor\topthink\think-orm\src\db\Builder.php:83]
+[2026-01-14T23:46:10+08:00][sql] CONNECT:[ UseTime:0.000695s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:46:10+08:00][sql] SHOW FULL COLUMNS FROM `ads` [ RunTime:0.004667s ]
+[2026-01-14T23:46:10+08:00][error] [10500]数据表字段不存在:[file][E:\Users\web\tp\vendor\topthink\think-orm\src\db\Builder.php:83]
+[2026-01-14T23:46:10+08:00][sql] CONNECT:[ UseTime:0.000924s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:46:10+08:00][sql] SHOW FULL COLUMNS FROM `ads` [ RunTime:0.004238s ]
+[2026-01-14T23:46:10+08:00][error] [10500]数据表字段不存在:[file][E:\Users\web\tp\vendor\topthink\think-orm\src\db\Builder.php:83]
+[2026-01-14T23:46:10+08:00][sql] CONNECT:[ UseTime:0.016200s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:46:10+08:00][sql] SHOW FULL COLUMNS FROM `ads` [ RunTime:0.006213s ]
+[2026-01-14T23:46:10+08:00][error] [10500]数据表字段不存在:[file][E:\Users\web\tp\vendor\topthink\think-orm\src\db\Builder.php:83]
+[2026-01-14T23:46:18+08:00][sql] CONNECT:[ UseTime:0.000765s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:46:18+08:00][sql] SHOW FULL COLUMNS FROM `ads` [ RunTime:0.004178s ]
+[2026-01-14T23:46:18+08:00][error] [10500]数据表字段不存在:[file][E:\Users\web\tp\vendor\topthink\think-orm\src\db\Builder.php:83]
+[2026-01-14T23:48:57+08:00][sql] CONNECT:[ UseTime:0.000764s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:48:57+08:00][sql] SHOW FULL COLUMNS FROM `ads` [ RunTime:0.005393s ]
+[2026-01-14T23:48:57+08:00][sql] SELECT * FROM `ads` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000289s ]
+[2026-01-14T23:49:10+08:00][sql] CONNECT:[ UseTime:0.000863s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:49:10+08:00][sql] SHOW FULL COLUMNS FROM `ads` [ RunTime:0.004588s ]
+[2026-01-14T23:50:41+08:00][sql] CONNECT:[ UseTime:0.000893s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:50:41+08:00][sql] SHOW FULL COLUMNS FROM `ads` [ RunTime:0.004213s ]
+[2026-01-14T23:50:41+08:00][sql] SELECT * FROM `ads` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000232s ]
+[2026-01-14T23:50:58+08:00][sql] CONNECT:[ UseTime:0.000756s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:50:58+08:00][sql] SHOW FULL COLUMNS FROM `ads` [ RunTime:0.004694s ]
+[2026-01-14T23:51:02+08:00][sql] CONNECT:[ UseTime:0.001013s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:51:02+08:00][sql] SHOW FULL COLUMNS FROM `ads` [ RunTime:0.003366s ]
+[2026-01-14T23:51:02+08:00][sql] SELECT COUNT(*) AS think_count FROM `ads` [ RunTime:0.000203s ]
+[2026-01-14T23:51:03+08:00][sql] CONNECT:[ UseTime:0.000861s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:51:03+08:00][sql] SHOW FULL COLUMNS FROM `ads` [ RunTime:0.003758s ]
+[2026-01-14T23:51:03+08:00][sql] SELECT * FROM `ads` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000223s ]
+[2026-01-14T23:51:07+08:00][sql] CONNECT:[ UseTime:0.000836s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:51:07+08:00][sql] SHOW FULL COLUMNS FROM `ads` [ RunTime:0.004280s ]
+[2026-01-14T23:51:24+08:00][sql] CONNECT:[ UseTime:0.000727s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:51:24+08:00][sql] SHOW FULL COLUMNS FROM `ads` [ RunTime:0.003922s ]
+[2026-01-14T23:52:45+08:00][sql] CONNECT:[ UseTime:0.001073s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:52:45+08:00][sql] SHOW FULL COLUMNS FROM `ads` [ RunTime:0.006102s ]
+[2026-01-14T23:52:45+08:00][sql] SELECT COUNT(*) AS think_count FROM `ads` [ RunTime:0.000250s ]
+[2026-01-14T23:52:47+08:00][sql] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:52:47+08:00][sql] SHOW FULL COLUMNS FROM `ads` [ RunTime:0.006353s ]
+[2026-01-14T23:52:47+08:00][sql] SELECT COUNT(*) AS think_count FROM `ads` [ RunTime:0.000252s ]
+[2026-01-14T23:52:49+08:00][sql] CONNECT:[ UseTime:0.000770s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:52:49+08:00][sql] SHOW FULL COLUMNS FROM `ads` [ RunTime:0.004880s ]
+[2026-01-14T23:52:49+08:00][sql] SELECT * FROM `ads` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000246s ]
+[2026-01-14T23:52:59+08:00][sql] CONNECT:[ UseTime:0.001044s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:52:59+08:00][sql] SHOW FULL COLUMNS FROM `ads` [ RunTime:0.004743s ]
+[2026-01-14T23:52:59+08:00][sql] INSERT INTO `ads` SET `title` = '11' , `image` = 'https://27142293.s21i.faiusr.com/4/ABUIABAEGAAgiafKqAYo0JjUsgUwgAo42QM.png' , `link` = '11' , `sort` = 0 , `update_time` = 1768405979 , `create_time` = 1768405979 [ RunTime:0.002761s ]
+[2026-01-14T23:53:01+08:00][sql] CONNECT:[ UseTime:0.000756s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:53:01+08:00][sql] SHOW FULL COLUMNS FROM `ads` [ RunTime:0.004973s ]
+[2026-01-14T23:53:01+08:00][sql] SELECT COUNT(*) AS think_count FROM `ads` [ RunTime:0.000227s ]
+[2026-01-14T23:53:01+08:00][sql] SELECT * FROM `ads` ORDER BY `sort` DESC,`id` DESC LIMIT 0,10 [ RunTime:0.000197s ]
+[2026-01-14T23:53:04+08:00][sql] CONNECT:[ UseTime:0.000861s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:53:04+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.003819s ]
+[2026-01-14T23:53:04+08:00][sql] SELECT * FROM `users` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000423s ]
+[2026-01-14T23:53:04+08:00][sql] SELECT COUNT(*) AS think_count FROM `users` [ RunTime:0.000269s ]
+[2026-01-14T23:53:16+08:00][sql] CONNECT:[ UseTime:0.000737s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:53:16+08:00][sql] SHOW FULL COLUMNS FROM `ads` [ RunTime:0.004014s ]
+[2026-01-14T23:53:16+08:00][sql] SELECT * FROM `ads` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000238s ]
+[2026-01-14T23:53:31+08:00][sql] CONNECT:[ UseTime:0.000719s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:53:31+08:00][sql] SHOW FULL COLUMNS FROM `ads` [ RunTime:0.004538s ]
+[2026-01-14T23:53:31+08:00][sql] UPDATE `ads`  SET `id` = 1 , `title` = '11' , `image` = 'https://27142293.s21i.faiusr.com/4/ABUIABAEGAAgiafKqAYo0JjUsgUwgAo42QM.png' , `link` = 'http://www.skzcn.com' , `sort` = 0 , `update_time` = 1768406011  WHERE  `id` = 1 [ RunTime:0.003316s ]
+[2026-01-14T23:53:33+08:00][sql] CONNECT:[ UseTime:0.000792s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:53:33+08:00][sql] SHOW FULL COLUMNS FROM `ads` [ RunTime:0.003695s ]
+[2026-01-14T23:53:33+08:00][sql] SELECT COUNT(*) AS think_count FROM `ads` [ RunTime:0.000203s ]
+[2026-01-14T23:53:33+08:00][sql] SELECT * FROM `ads` ORDER BY `sort` DESC,`id` DESC LIMIT 0,10 [ RunTime:0.000213s ]
+[2026-01-14T23:53:58+08:00][sql] CONNECT:[ UseTime:0.000962s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:53:58+08:00][sql] SHOW FULL COLUMNS FROM `ads` [ RunTime:0.003978s ]
+[2026-01-14T23:53:58+08:00][sql] SELECT * FROM `ads` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000283s ]
+[2026-01-14T23:53:59+08:00][sql] CONNECT:[ UseTime:0.000794s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:53:59+08:00][sql] SHOW FULL COLUMNS FROM `ads` [ RunTime:0.004037s ]
+[2026-01-14T23:53:59+08:00][sql] UPDATE `ads`  SET `id` = 1 , `title` = '11' , `image` = 'https://27142293.s21i.faiusr.com/4/ABUIABAEGAAgiafKqAYo0JjUsgUwgAo42QM.png' , `link` = 'https://www.skzcn.com' , `sort` = 0 , `update_time` = 1768406039  WHERE  `id` = 1 [ RunTime:0.002924s ]
+[2026-01-14T23:54:01+08:00][sql] CONNECT:[ UseTime:0.000742s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:54:01+08:00][sql] SHOW FULL COLUMNS FROM `ads` [ RunTime:0.004107s ]
+[2026-01-14T23:54:01+08:00][sql] SELECT COUNT(*) AS think_count FROM `ads` [ RunTime:0.000218s ]
+[2026-01-14T23:54:01+08:00][sql] SELECT * FROM `ads` ORDER BY `sort` DESC,`id` DESC LIMIT 0,10 [ RunTime:0.000216s ]
+[2026-01-14T23:54:11+08:00][sql] CONNECT:[ UseTime:0.000766s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:54:11+08:00][sql] SHOW FULL COLUMNS FROM `ads` [ RunTime:0.004725s ]
+[2026-01-14T23:54:11+08:00][sql] SELECT * FROM `ads` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000246s ]
+[2026-01-14T23:54:36+08:00][sql] CONNECT:[ UseTime:0.000912s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:54:36+08:00][sql] SHOW FULL COLUMNS FROM `ads` [ RunTime:0.004267s ]
+[2026-01-14T23:54:36+08:00][sql] INSERT INTO `ads` SET `title` = '222' , `image` = 'https://img.shetu66.com/2023/10/15/1697368610614940.png?x-oss-process=image/resize,h_900/format,webp' , `link` = 'https://www.skzcn.com' , `sort` = 0 , `update_time` = 1768406076 , `create_time` = 1768406076 [ RunTime:0.003608s ]
+[2026-01-14T23:54:38+08:00][sql] CONNECT:[ UseTime:0.000715s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:54:38+08:00][sql] SHOW FULL COLUMNS FROM `ads` [ RunTime:0.004118s ]
+[2026-01-14T23:54:38+08:00][sql] SELECT COUNT(*) AS think_count FROM `ads` [ RunTime:0.000240s ]
+[2026-01-14T23:54:38+08:00][sql] SELECT * FROM `ads` ORDER BY `sort` DESC,`id` DESC LIMIT 0,10 [ RunTime:0.000255s ]
+[2026-01-14T23:54:59+08:00][sql] CONNECT:[ UseTime:0.001223s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:54:59+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.004427s ]
+[2026-01-14T23:54:59+08:00][sql] SELECT * FROM `users` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000451s ]
+[2026-01-14T23:54:59+08:00][sql] SELECT COUNT(*) AS think_count FROM `users` [ RunTime:0.000227s ]
+[2026-01-14T23:54:59+08:00][sql] CONNECT:[ UseTime:0.000823s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:54:59+08:00][sql] SHOW FULL COLUMNS FROM `ads` [ RunTime:0.004259s ]
+[2026-01-14T23:54:59+08:00][sql] SELECT COUNT(*) AS think_count FROM `ads` [ RunTime:0.000244s ]
+[2026-01-14T23:54:59+08:00][sql] SELECT * FROM `ads` ORDER BY `sort` DESC,`id` DESC LIMIT 0,10 [ RunTime:0.000223s ]
+[2026-01-14T23:55:01+08:00][sql] CONNECT:[ UseTime:0.000769s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:55:01+08:00][sql] SHOW FULL COLUMNS FROM `admins` [ RunTime:0.004774s ]
+[2026-01-14T23:55:01+08:00][sql] SELECT * FROM `admins` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000242s ]
+[2026-01-14T23:55:01+08:00][sql] SELECT COUNT(*) AS think_count FROM `admins` [ RunTime:0.000196s ]
+[2026-01-14T23:56:51+08:00][sql] CONNECT:[ UseTime:0.018465s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:56:51+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.004806s ]
+[2026-01-14T23:56:51+08:00][sql] SELECT * FROM `users` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000309s ]
+[2026-01-14T23:56:51+08:00][sql] SELECT COUNT(*) AS think_count FROM `users` [ RunTime:0.000236s ]
+[2026-01-14T23:56:58+08:00][sql] CONNECT:[ UseTime:0.000924s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:56:58+08:00][sql] SHOW FULL COLUMNS FROM `ads` [ RunTime:0.003923s ]
+[2026-01-14T23:56:58+08:00][sql] SELECT COUNT(*) AS think_count FROM `ads` [ RunTime:0.000205s ]
+[2026-01-14T23:56:58+08:00][sql] SELECT * FROM `ads` ORDER BY `sort` DESC,`id` DESC LIMIT 0,10 [ RunTime:0.000223s ]

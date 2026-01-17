@@ -1,0 +1,284 @@
+<?php /*a:1:{s:46:"E:\Users\web\tp\app\index\view\user\index.html";i:1768448557;}*/ ?>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+  <title>通知车主挪车</title>
+  <link rel="stylesheet" href="/static/layui/css/layui.css" media="all">
+  <style>
+    /* ... (CSS from script) ... */
+    :root { --sat: env(safe-area-inset-top, 0px); --sar: env(safe-area-inset-right, 0px); --sab: env(safe-area-inset-bottom, 0px); --sal: env(safe-area-inset-left, 0px); }
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; margin: 0; padding: 0; }
+    body { font-family: -apple-system, sans-serif; background: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%); min-height: 100vh; padding: 20px; display: flex; justify-content: center; align-items: flex-start; }
+    .container { width: 100%; max-width: 500px; display: flex; flex-direction: column; gap: 15px; }
+    .card { background: rgba(255, 255, 255, 0.95); border-radius: 24px; padding: 20px; box-shadow: 0 10px 40px rgba(0, 147, 233, 0.2); }
+    .header { text-align: center; }
+    .icon-wrap { width: 80px; height: 80px; background: linear-gradient(135deg, #0093E9 0%, #80D0C7 100%); border-radius: 24px; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; }
+    .icon-wrap span { font-size: 40px; }
+    .input-card textarea { width: 100%; min-height: 100px; border: none; padding: 15px; font-size: 16px; outline: none; background: transparent; }
+    .tags { display: flex; gap: 10px; padding: 10px; overflow-x: auto; }
+    .tag { background: #e0f7fa; color: #00796b; padding: 8px 15px; border-radius: 20px; font-size: 14px; cursor: pointer; white-space: nowrap; }
+    .loc-card { display: flex; align-items: center; gap: 15px; }
+    .loc-icon { width: 40px; height: 40px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; }
+    .loc-icon.loading { background: #fff3cd; color: #856404; }
+    .loc-icon.success { background: #d4edda; color: #155724; }
+    .loc-icon.error { background: #f8d7da; color: #721c24; }
+    .btn-retry { font-size: 12px; color: #0093E9; cursor: pointer; text-decoration: underline; margin-top: 5px; display: none; }
+    .btn-main { background: linear-gradient(135deg, #0093E9 0%, #80D0C7 100%); color: white; border: none; padding: 18px; border-radius: 18px; font-size: 18px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; transition: opacity 0.3s; }
+    .btn-main:disabled { opacity: 0.6; cursor: not-allowed; }
+    .toast { position: fixed; top: 20px; left: 50%; transform: translateX(-50%); background: white; padding: 10px 20px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); display: none; }
+    #successView { display: none; }
+    .owner-card { background: white; border: 2px solid #80D0C7; text-align: center; }
+    .hidden { display: none; }
+    .map-links { display: flex; gap: 10px; margin-top: 15px; }
+    .map-btn { flex: 1; padding: 12px; border-radius: 12px; text-decoration: none; color: white; font-weight: 600; }
+    .amap { background: #1890ff; }
+    .apple { background: #1d1d1f; }
+
+    /* 广告样式 */
+    .ad-container { margin-top: 15px; border-radius: 20px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); background: #fff; }
+    .ad-item { display: block; width: 100%; height: 100%; }
+    .ad-item img { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 20px; }
+    
+    /* 修正 LayUI 轮播在容器内的边距 */
+    #adCarousel { background-color: transparent; min-height: 120px; }
+    #adCarousel [carousel-item] > div { background-color: transparent; }
+  </style>
+</head>
+<body>
+    <div id="toast" class="toast"></div>
+
+    <div class="container" id="mainView">
+      <div class="card header">
+        <div class="icon-wrap"><span>🚗</span></div>
+        <h1>呼叫车主挪车</h1>
+        <p>车牌: <?php echo htmlentities((string) $user['plate']); ?></p>
+      </div>
+
+      <div class="card input-card">
+        <textarea id="msgInput" placeholder="输入留言给车主...（可选）"></textarea>
+        <div class="tags">
+          <div class="tag" onclick="addTag('您的车挡住我了')">🚧 挡路</div>
+          <div class="tag" onclick="addTag('临时停靠一下')">⏱️ 临停</div>
+          <div class="tag" onclick="addTag('电话打不通')">📞 没接</div>
+        </div>
+      </div>
+
+      <div class="card loc-card">
+        <div id="locIcon" class="loc-icon loading">📍</div>
+        <div class="loc-content">
+          <div class="loc-title">我的位置</div>
+          <div id="locStatus" class="loc-status">正在获取...</div>
+          <div id="retryLoc" class="btn-retry" onclick="getLocation()">点击重试</div>
+        </div>
+      </div>
+
+      <?php if(count($ads) > 0): ?>
+      <div class="ad-container" style="min-height: 120px; background: #f8fafc;">
+        <?php if(count($ads) == 1): $ad = $ads[0]; ?>
+          <a href="<?php echo !empty($ad['link']) ? htmlentities((string) $ad['link']) : 'javascript:;'; ?>" <?php if(!empty($ad['link'])): ?>target="_blank"<?php endif; ?> class="ad-item">
+            <img src="<?php echo htmlentities((string) $ad['image']); ?>" alt="<?php echo htmlentities((string) $ad['title']); ?>" style="width: 100%; height: 120px; object-fit: cover; border-radius: 20px;">
+          </a>
+        <?php else: ?>
+          <div class="layui-carousel" id="adCarousel">
+            <div carousel-item>
+              <?php if(is_array($ads) || $ads instanceof \think\Collection || $ads instanceof \think\Paginator): $i = 0; $__LIST__ = $ads;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$ad): $mod = ($i % 2 );++$i;?>
+              <div>
+                <a href="<?php echo !empty($ad['link']) ? htmlentities((string) $ad['link']) : 'javascript:;'; ?>" <?php if(!empty($ad['link'])): ?>target="_blank"<?php endif; ?> class="ad-item">
+                  <img src="<?php echo htmlentities((string) $ad['image']); ?>" alt="<?php echo htmlentities((string) $ad['title']); ?>" style="width: 100%; height: 120px; object-fit: cover; border-radius: 20px;">
+                </a>
+              </div>
+              <?php endforeach; endif; else: echo "" ;endif; ?>
+            </div>
+          </div>
+        <?php endif; ?>
+      </div>
+      <?php endif; ?>
+
+      <button id="notifyBtn" class="card btn-main" onclick="sendNotify()">
+        <span>🔔</span>
+        <span>一键通知车主</span>
+      </button>
+    </div>
+
+    <div class="container" id="successView">
+      <div class="card header">
+        <span style="font-size: 60px;">✅</span>
+        <h2>通知已发送！</h2>
+        <p>正在等待车主回应...</p>
+      </div>
+
+      <div id="ownerFeedback" class="card owner-card hidden">
+        <h3>车主已收到通知</h3>
+        <p>正在赶来，点击查看车主位置</p>
+        <div id="ownerMapLinks" class="map-links">
+          <a id="ownerAmapLink" href="#" class="map-btn amap">高德地图</a>
+          <a id="ownerAppleLink" href="#" class="map-btn apple">Apple Maps</a>
+        </div>
+      </div>
+      
+      <div class="card" style="text-align: center;">
+        <a href="tel:<?php echo htmlentities((string) $user['mobile']); ?>" style="color: #ef4444; font-weight: bold; text-decoration: none;">📞 直接打电话</a>
+      </div>
+    </div>
+
+    <script src="/static/layui/layui.js"></script>
+    <?php if(!empty($mapConfig['amap']['js_api_key'])): ?>
+    <script type="text/javascript">
+        window._AMapSecurityConfig = {
+            securityJsCode: '<?php echo htmlentities((string) $mapConfig['amap']['security_code']); ?>'
+        }
+    </script>
+    <script src="https://webapi.amap.com/maps?v=2.0&key=<?php echo htmlentities((string) $mapConfig['amap']['js_api_key']); ?>"></script>
+    <?php endif; ?>
+    <script>
+      layui.use(['carousel', 'jquery'], function(){
+        var carousel = layui.carousel;
+        var $ = layui.jquery;
+        var adsCount = Number("<?php echo count($ads ?? []); ?>");
+        
+        console.log('Ads count:', adsCount);
+        if (adsCount > 1 && $('#adCarousel').length > 0) {
+          carousel.render({
+            elem: '#adCarousel',
+            width: '100%',
+            height: '120px',
+            arrow: 'hover',
+            indicator: 'inside',
+            autoplay: true,
+            interval: 3000,
+            anim: 'default'
+          });
+        }
+      });
+
+      const username = "<?php echo htmlentities((string) $user['username']); ?>";
+      let userLocation = null;
+      const amapKey = "<?php echo isset($mapConfig['amap']['js_api_key']) ? htmlentities((string) $mapConfig['amap']['js_api_key']) : ''; ?>";
+
+      window.onload = () => {
+        getLocation();
+      };
+
+      function getLocation(retryWithLowAccuracy = false) {
+        const status = document.getElementById('locStatus');
+        const icon = document.getElementById('locIcon');
+        const retry = document.getElementById('retryLoc');
+
+        status.innerText = retryWithLowAccuracy ? '尝试普通定位...' : '正在获取...';
+        icon.className = 'loc-icon loading';
+        retry.style.display = 'none';
+
+        // HTTPS check
+        if (!window.isSecureContext && window.location.hostname !== 'localhost' && window.location.protocol !== 'https:') {
+             status.innerText = '需HTTPS环境';
+             icon.className = 'loc-icon error';
+             retry.style.display = 'block';
+             return;
+        }
+
+        // Try Amap first if available
+        if (amapKey && window.AMap) {
+            AMap.plugin('AMap.Geolocation', function() {
+                var geolocation = new AMap.Geolocation({
+                    enableHighAccuracy: !retryWithLowAccuracy,
+                    timeout: 10000,
+                });
+                geolocation.getCurrentPosition(function(status, result){
+                    if(status=='complete'){
+                        onLocationSuccess({ coords: { latitude: result.position.lat, longitude: result.position.lng } });
+                    }else{
+                        onLocationError({ code: 'AMAP_ERROR', message: result.message }, retryWithLowAccuracy);
+                    }
+                });
+            });
+            return;
+        }
+
+        if ('geolocation' in navigator) {
+          navigator.geolocation.getCurrentPosition(
+            onLocationSuccess,
+            (err) => onLocationError(err, retryWithLowAccuracy),
+            {
+              enableHighAccuracy: !retryWithLowAccuracy,
+              timeout: 10000,
+              maximumAge: retryWithLowAccuracy ? 60000 : 0
+            }
+          );
+        } else {
+          status.innerText = '浏览器不支持';
+          icon.className = 'loc-icon error';
+        }
+      }
+
+      function onLocationSuccess(pos) {
+        userLocation = { lat: pos.coords.latitude, lng: pos.coords.longitude };
+        document.getElementById('locIcon').className = 'loc-icon success';
+        document.getElementById('locStatus').innerText = '已获取位置';
+        document.getElementById('retryLoc').style.display = 'none';
+      }
+
+      function onLocationError(err, isLowAccuracy) {
+        const status = document.getElementById('locStatus');
+        const icon = document.getElementById('locIcon');
+        const retry = document.getElementById('retryLoc');
+        
+        console.error('Location error:', err);
+
+        if (!isLowAccuracy) {
+            // Retry with low accuracy
+            getLocation(true);
+            return;
+        }
+
+        let msg = '定位失败';
+        if (err.code === 1) msg = '权限被拒绝';
+        else if (err.code === 2) msg = '位置不可用';
+        else if (err.code === 3) msg = '获取超时';
+        else if (err.code === 'AMAP_ERROR') msg = '定位失败';
+
+        status.innerText = msg;
+        icon.className = 'loc-icon error';
+        retry.style.display = 'block';
+      }
+
+      function addTag(text) { document.getElementById('msgInput').value = text; }
+
+      async function sendNotify() {
+        const msg = document.getElementById('msgInput').value;
+        const btn = document.getElementById('notifyBtn');
+        btn.disabled = true;
+        btn.innerText = '发送中...';
+
+        try {
+          const res = await fetch("<?php echo url('api/notify'); ?>", {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams({ message: msg, location: JSON.stringify(userLocation), username: username })
+          });
+          const data = await res.json();
+          if (data.success) {
+            document.getElementById('mainView').style.display = 'none';
+            document.getElementById('successView').style.display = 'flex';
+            startPolling();
+          }
+        } catch (e) { alert('发送失败'); btn.disabled = false; btn.innerText = '一键通知车主'; }
+      }
+
+      function startPolling() {
+        setInterval(async () => {
+          const res = await fetch("<?php echo url('api/checkStatus'); ?>?u=" + username);
+          const data = await res.json();
+          if (data.status === 'confirmed') {
+            document.getElementById('ownerFeedback').classList.remove('hidden');
+            if (data.ownerLocation) {
+              document.getElementById('ownerAmapLink').href = data.ownerLocation.amapUrl;
+              document.getElementById('ownerAppleLink').href = data.ownerLocation.appleUrl;
+            }
+          }
+        }, 3000);
+      }
+    </script>
+</body>
+</html>

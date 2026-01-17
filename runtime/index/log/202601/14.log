@@ -1,0 +1,162 @@
+[2026-01-14T22:27:55+08:00][sql] CONNECT:[ UseTime:0.000728s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T22:27:55+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.004544s ]
+[2026-01-14T22:27:55+08:00][sql] SELECT * FROM `users` WHERE  `username` = '1' LIMIT 1 [ RunTime:0.000328s ]
+[2026-01-14T22:28:03+08:00][sql] CONNECT:[ UseTime:0.000753s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T22:28:03+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.003659s ]
+[2026-01-14T22:28:03+08:00][sql] SELECT * FROM `users` WHERE  `username` = '1' LIMIT 1 [ RunTime:0.000229s ]
+[2026-01-14T22:28:09+08:00][sql] CONNECT:[ UseTime:0.000762s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T22:28:09+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.003484s ]
+[2026-01-14T22:28:09+08:00][sql] SELECT * FROM `users` WHERE  `username` = '1' LIMIT 1 [ RunTime:0.000246s ]
+[2026-01-14T22:31:12+08:00][sql] CONNECT:[ UseTime:0.000999s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T22:31:12+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.004304s ]
+[2026-01-14T22:31:12+08:00][sql] SELECT * FROM `users` WHERE  `username` = '1' LIMIT 1 [ RunTime:0.000270s ]
+[2026-01-14T22:32:53+08:00][sql] CONNECT:[ UseTime:0.000766s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T22:32:53+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.003851s ]
+[2026-01-14T22:32:53+08:00][sql] SELECT * FROM `users` WHERE  `username` = '1' LIMIT 1 [ RunTime:0.000240s ]
+[2026-01-14T22:32:54+08:00][sql] CONNECT:[ UseTime:0.000693s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T22:32:54+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.003502s ]
+[2026-01-14T22:32:54+08:00][sql] SELECT * FROM `users` WHERE  `username` = '1' LIMIT 1 [ RunTime:0.000238s ]
+[2026-01-14T22:32:57+08:00][error] [2]file_get_contents(): SSL operation failed with code 1. OpenSSL Error messages:
+error:0A000086:SSL routines::certificate verify failed[E:\Users\web\tp\app\common.php:87]
+[2026-01-14T22:36:17+08:00][sql] CONNECT:[ UseTime:0.018984s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T22:36:17+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.003731s ]
+[2026-01-14T22:36:17+08:00][sql] SELECT * FROM `users` WHERE  `username` = '1' LIMIT 1 [ RunTime:0.000241s ]
+[2026-01-14T22:36:21+08:00][error] [2]file_get_contents(): SSL operation failed with code 1. OpenSSL Error messages:
+error:0A000086:SSL routines::certificate verify failed[E:\Users\web\tp\app\common.php:87]
+[2026-01-14T22:36:28+08:00][sql] CONNECT:[ UseTime:0.000679s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T22:36:28+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.003754s ]
+[2026-01-14T22:36:28+08:00][sql] SELECT * FROM `users` WHERE  `username` = '1' LIMIT 1 [ RunTime:0.000232s ]
+[2026-01-14T22:36:29+08:00][error] [2]file_get_contents(): SSL operation failed with code 1. OpenSSL Error messages:
+error:0A000086:SSL routines::certificate verify failed[E:\Users\web\tp\app\common.php:87]
+[2026-01-14T22:36:37+08:00][sql] CONNECT:[ UseTime:0.000760s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T22:36:37+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.003684s ]
+[2026-01-14T22:36:37+08:00][sql] SELECT * FROM `users` WHERE  `username` = '1' LIMIT 1 [ RunTime:0.000233s ]
+[2026-01-14T22:36:39+08:00][error] [2]file_get_contents(): SSL operation failed with code 1. OpenSSL Error messages:
+error:0A000086:SSL routines::certificate verify failed[E:\Users\web\tp\app\common.php:87]
+[2026-01-14T22:38:09+08:00][sql] CONNECT:[ UseTime:0.000866s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T22:38:09+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.003400s ]
+[2026-01-14T22:38:09+08:00][sql] SELECT * FROM `users` WHERE  `username` = '1' LIMIT 1 [ RunTime:0.000309s ]
+[2026-01-14T22:38:15+08:00][sql] CONNECT:[ UseTime:0.000688s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T22:38:15+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.003425s ]
+[2026-01-14T22:38:15+08:00][sql] SELECT * FROM `users` WHERE  `username` = '1' LIMIT 1 [ RunTime:0.000235s ]
+[2026-01-14T22:40:39+08:00][sql] CONNECT:[ UseTime:0.001475s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T22:40:39+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.005263s ]
+[2026-01-14T22:40:39+08:00][sql] SELECT * FROM `users` WHERE  `username` = '1' LIMIT 1 [ RunTime:0.000422s ]
+[2026-01-14T22:40:43+08:00][sql] CONNECT:[ UseTime:0.000822s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T22:40:43+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.003503s ]
+[2026-01-14T22:40:43+08:00][sql] SELECT * FROM `users` WHERE  `username` = '1' LIMIT 1 [ RunTime:0.000241s ]
+[2026-01-14T23:01:20+08:00][sql] CONNECT:[ UseTime:0.001039s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:01:20+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.003781s ]
+[2026-01-14T23:01:20+08:00][sql] SELECT * FROM `users` WHERE  `username` = '123' LIMIT 1 [ RunTime:0.000336s ]
+[2026-01-14T23:01:20+08:00][sql] INSERT INTO `users` SET `username` = '123' , `password` = '$2y$12$qxtFBiOnfHFSHPc7lSI.beKyH2X7XcGTI2rrrBQIk8OH2sVH383a6' , `nickname` = '' , `plate` = '' , `mobile` = '' , `create_time` = 1768402880 , `update_time` = 1768402880 , `status` = 1 [ RunTime:0.002930s ]
+[2026-01-14T23:07:33+08:00][sql] CONNECT:[ UseTime:0.000844s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:07:33+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.003655s ]
+[2026-01-14T23:07:33+08:00][sql] SELECT * FROM `users` WHERE  `username` = '123' LIMIT 1 [ RunTime:0.000409s ]
+[2026-01-14T23:07:39+08:00][sql] CONNECT:[ UseTime:0.000998s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:07:39+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.003910s ]
+[2026-01-14T23:07:39+08:00][sql] SELECT * FROM `users` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000299s ]
+[2026-01-14T23:22:50+08:00][sql] CONNECT:[ UseTime:0.000879s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:22:50+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.004315s ]
+[2026-01-14T23:22:50+08:00][sql] SELECT * FROM `users` WHERE  `username` = '123' LIMIT 1 [ RunTime:0.000319s ]
+[2026-01-14T23:24:11+08:00][sql] CONNECT:[ UseTime:0.000804s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:24:11+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.003614s ]
+[2026-01-14T23:24:11+08:00][sql] SELECT * FROM `users` WHERE  `username` = '123' LIMIT 1 [ RunTime:0.000250s ]
+[2026-01-14T23:29:37+08:00][sql] CONNECT:[ UseTime:0.000904s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:29:37+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.003773s ]
+[2026-01-14T23:29:37+08:00][sql] SELECT * FROM `users` WHERE  `username` = '123' LIMIT 1 [ RunTime:0.000262s ]
+[2026-01-14T23:29:46+08:00][sql] CONNECT:[ UseTime:0.000892s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:29:46+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.003727s ]
+[2026-01-14T23:29:46+08:00][sql] SELECT * FROM `users` WHERE  `username` = '123' LIMIT 1 [ RunTime:0.000259s ]
+[2026-01-14T23:36:21+08:00][sql] CONNECT:[ UseTime:0.000706s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:36:21+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.003469s ]
+[2026-01-14T23:36:21+08:00][sql] SELECT * FROM `users` WHERE  `username` = '123' LIMIT 1 [ RunTime:0.000242s ]
+[2026-01-14T23:42:22+08:00][sql] CONNECT:[ UseTime:0.000836s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:42:22+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.004085s ]
+[2026-01-14T23:42:22+08:00][sql] SELECT * FROM `users` WHERE  `username` = '123' LIMIT 1 [ RunTime:0.000258s ]
+[2026-01-14T23:42:22+08:00][sql] SHOW FULL COLUMNS FROM `ads` [ RunTime:0.003284s ]
+[2026-01-14T23:42:22+08:00][sql] SELECT * FROM `ads` WHERE  `status` = 1 ORDER BY `sort` DESC,`id` DESC [ RunTime:0.000257s ]
+[2026-01-14T23:42:29+08:00][sql] CONNECT:[ UseTime:0.001031s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:42:29+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.004236s ]
+[2026-01-14T23:42:29+08:00][sql] SELECT * FROM `users` WHERE  `username` = '123' LIMIT 1 [ RunTime:0.000497s ]
+[2026-01-14T23:42:29+08:00][sql] SHOW FULL COLUMNS FROM `ads` [ RunTime:0.003778s ]
+[2026-01-14T23:42:29+08:00][sql] SELECT * FROM `ads` WHERE  `status` = 1 ORDER BY `sort` DESC,`id` DESC [ RunTime:0.000238s ]
+[2026-01-14T23:53:05+08:00][sql] CONNECT:[ UseTime:0.000882s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:53:05+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.003904s ]
+[2026-01-14T23:53:05+08:00][sql] SELECT * FROM `users` WHERE  `username` = '123' LIMIT 1 [ RunTime:0.000264s ]
+[2026-01-14T23:53:05+08:00][sql] SHOW FULL COLUMNS FROM `ads` [ RunTime:0.003740s ]
+[2026-01-14T23:53:05+08:00][sql] SELECT * FROM `ads` WHERE  `status` = 1 ORDER BY `sort` DESC,`id` DESC [ RunTime:0.000279s ]
+[2026-01-14T23:53:35+08:00][sql] CONNECT:[ UseTime:0.000901s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:53:35+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.003354s ]
+[2026-01-14T23:53:35+08:00][sql] SELECT * FROM `users` WHERE  `username` = '123' LIMIT 1 [ RunTime:0.000249s ]
+[2026-01-14T23:53:35+08:00][sql] SHOW FULL COLUMNS FROM `ads` [ RunTime:0.003694s ]
+[2026-01-14T23:53:35+08:00][sql] SELECT * FROM `ads` WHERE  `status` = 1 ORDER BY `sort` DESC,`id` DESC [ RunTime:0.000270s ]
+[2026-01-14T23:54:02+08:00][sql] CONNECT:[ UseTime:0.000778s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:54:02+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.003597s ]
+[2026-01-14T23:54:02+08:00][sql] SELECT * FROM `users` WHERE  `username` = '123' LIMIT 1 [ RunTime:0.000310s ]
+[2026-01-14T23:54:02+08:00][sql] SHOW FULL COLUMNS FROM `ads` [ RunTime:0.003145s ]
+[2026-01-14T23:54:02+08:00][sql] SELECT * FROM `ads` WHERE  `status` = 1 ORDER BY `sort` DESC,`id` DESC [ RunTime:0.000246s ]
+[2026-01-14T23:54:40+08:00][sql] CONNECT:[ UseTime:0.000814s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:54:40+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.005244s ]
+[2026-01-14T23:54:40+08:00][sql] SELECT * FROM `users` WHERE  `username` = '123' LIMIT 1 [ RunTime:0.000329s ]
+[2026-01-14T23:54:40+08:00][sql] SHOW FULL COLUMNS FROM `ads` [ RunTime:0.005656s ]
+[2026-01-14T23:54:40+08:00][sql] SELECT * FROM `ads` WHERE  `status` = 1 ORDER BY `sort` DESC,`id` DESC [ RunTime:0.000305s ]
+[2026-01-14T23:56:52+08:00][sql] CONNECT:[ UseTime:0.001009s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:56:52+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.003386s ]
+[2026-01-14T23:56:52+08:00][sql] SELECT * FROM `users` WHERE  `username` = '123' LIMIT 1 [ RunTime:0.000243s ]
+[2026-01-14T23:56:52+08:00][sql] SHOW FULL COLUMNS FROM `ads` [ RunTime:0.003533s ]
+[2026-01-14T23:56:52+08:00][sql] SELECT * FROM `ads` WHERE  `status` = 1 ORDER BY `sort` DESC,`id` DESC [ RunTime:0.000292s ]
+[2026-01-14T23:56:55+08:00][sql] CONNECT:[ UseTime:0.000853s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:56:55+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.003862s ]
+[2026-01-14T23:56:55+08:00][sql] SELECT * FROM `users` WHERE  `username` = '123' LIMIT 1 [ RunTime:0.000256s ]
+[2026-01-14T23:56:55+08:00][sql] SHOW FULL COLUMNS FROM `ads` [ RunTime:0.004251s ]
+[2026-01-14T23:56:55+08:00][sql] SELECT * FROM `ads` WHERE  `status` = 1 ORDER BY `sort` DESC,`id` DESC [ RunTime:0.000274s ]
+[2026-01-14T23:57:02+08:00][sql] CONNECT:[ UseTime:0.000706s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:57:02+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.003798s ]
+[2026-01-14T23:57:02+08:00][sql] SELECT * FROM `users` WHERE  `username` = '123' LIMIT 1 [ RunTime:0.000264s ]
+[2026-01-14T23:57:02+08:00][sql] SHOW FULL COLUMNS FROM `ads` [ RunTime:0.002920s ]
+[2026-01-14T23:57:02+08:00][sql] SELECT * FROM `ads` WHERE  `status` = 1 ORDER BY `sort` DESC,`id` DESC [ RunTime:0.000320s ]
+[2026-01-14T23:57:03+08:00][sql] CONNECT:[ UseTime:0.000742s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:57:03+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.004370s ]
+[2026-01-14T23:57:03+08:00][sql] SELECT * FROM `users` WHERE  `username` = '123' LIMIT 1 [ RunTime:0.000303s ]
+[2026-01-14T23:57:03+08:00][sql] SHOW FULL COLUMNS FROM `ads` [ RunTime:0.005310s ]
+[2026-01-14T23:57:03+08:00][sql] SELECT * FROM `ads` WHERE  `status` = 1 ORDER BY `sort` DESC,`id` DESC [ RunTime:0.000284s ]
+[2026-01-14T23:57:03+08:00][sql] CONNECT:[ UseTime:0.000756s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:57:03+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.004373s ]
+[2026-01-14T23:57:03+08:00][sql] SELECT * FROM `users` WHERE  `username` = '123' LIMIT 1 [ RunTime:0.000260s ]
+[2026-01-14T23:57:03+08:00][sql] SHOW FULL COLUMNS FROM `ads` [ RunTime:0.004729s ]
+[2026-01-14T23:57:03+08:00][sql] SELECT * FROM `ads` WHERE  `status` = 1 ORDER BY `sort` DESC,`id` DESC [ RunTime:0.000286s ]
+[2026-01-14T23:57:04+08:00][sql] CONNECT:[ UseTime:0.000873s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:57:04+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.004380s ]
+[2026-01-14T23:57:04+08:00][sql] SELECT * FROM `users` WHERE  `username` = '123' LIMIT 1 [ RunTime:0.000288s ]
+[2026-01-14T23:57:04+08:00][sql] SHOW FULL COLUMNS FROM `ads` [ RunTime:0.004113s ]
+[2026-01-14T23:57:04+08:00][sql] SELECT * FROM `ads` WHERE  `status` = 1 ORDER BY `sort` DESC,`id` DESC [ RunTime:0.000277s ]
+[2026-01-14T23:57:05+08:00][sql] CONNECT:[ UseTime:0.000918s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:57:05+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.004617s ]
+[2026-01-14T23:57:05+08:00][sql] SELECT * FROM `users` WHERE  `username` = '123' LIMIT 1 [ RunTime:0.000298s ]
+[2026-01-14T23:57:05+08:00][sql] SHOW FULL COLUMNS FROM `ads` [ RunTime:0.003989s ]
+[2026-01-14T23:57:05+08:00][sql] SELECT * FROM `ads` WHERE  `status` = 1 ORDER BY `sort` DESC,`id` DESC [ RunTime:0.000295s ]
+[2026-01-14T23:57:06+08:00][sql] CONNECT:[ UseTime:0.000741s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:57:06+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.003400s ]
+[2026-01-14T23:57:06+08:00][sql] SELECT * FROM `users` WHERE  `username` = '123' LIMIT 1 [ RunTime:0.000241s ]
+[2026-01-14T23:57:06+08:00][sql] SHOW FULL COLUMNS FROM `ads` [ RunTime:0.003265s ]
+[2026-01-14T23:57:06+08:00][sql] SELECT * FROM `ads` WHERE  `status` = 1 ORDER BY `sort` DESC,`id` DESC [ RunTime:0.000253s ]
+[2026-01-14T23:57:06+08:00][sql] CONNECT:[ UseTime:0.000686s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:57:06+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.003858s ]
+[2026-01-14T23:57:06+08:00][sql] SELECT * FROM `users` WHERE  `username` = '123' LIMIT 1 [ RunTime:0.000297s ]
+[2026-01-14T23:57:06+08:00][sql] SHOW FULL COLUMNS FROM `ads` [ RunTime:0.003537s ]
+[2026-01-14T23:57:06+08:00][sql] SELECT * FROM `ads` WHERE  `status` = 1 ORDER BY `sort` DESC,`id` DESC [ RunTime:0.000287s ]
+[2026-01-14T23:57:07+08:00][sql] CONNECT:[ UseTime:0.000794s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:57:07+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.003966s ]
+[2026-01-14T23:57:07+08:00][sql] SELECT * FROM `users` WHERE  `username` = '123' LIMIT 1 [ RunTime:0.000271s ]
+[2026-01-14T23:57:07+08:00][sql] SHOW FULL COLUMNS FROM `ads` [ RunTime:0.003607s ]
+[2026-01-14T23:57:07+08:00][sql] SELECT * FROM `ads` WHERE  `status` = 1 ORDER BY `sort` DESC,`id` DESC [ RunTime:0.000235s ]
+[2026-01-14T23:57:08+08:00][sql] CONNECT:[ UseTime:0.000696s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:57:08+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.003882s ]
+[2026-01-14T23:57:08+08:00][sql] SELECT * FROM `users` WHERE  `username` = '123' LIMIT 1 [ RunTime:0.000290s ]
+[2026-01-14T23:57:08+08:00][sql] SHOW FULL COLUMNS FROM `ads` [ RunTime:0.003106s ]
+[2026-01-14T23:57:08+08:00][sql] SELECT * FROM `ads` WHERE  `status` = 1 ORDER BY `sort` DESC,`id` DESC [ RunTime:0.000227s ]
+[2026-01-14T23:57:14+08:00][sql] CONNECT:[ UseTime:0.001080s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-14T23:57:14+08:00][sql] SHOW FULL COLUMNS FROM `users` [ RunTime:0.004263s ]
+[2026-01-14T23:57:14+08:00][sql] SELECT * FROM `users` WHERE  `username` = '123' LIMIT 1 [ RunTime:0.000292s ]
+[2026-01-14T23:57:14+08:00][sql] SHOW FULL COLUMNS FROM `ads` [ RunTime:0.004437s ]
+[2026-01-14T23:57:14+08:00][sql] SELECT * FROM `ads` WHERE  `status` = 1 ORDER BY `sort` DESC,`id` DESC [ RunTime:0.000273s ]

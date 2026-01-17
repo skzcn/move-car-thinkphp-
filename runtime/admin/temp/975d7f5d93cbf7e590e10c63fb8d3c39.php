@@ -1,0 +1,81 @@
+<?php /*a:1:{s:46:"E:\Users\web\tp\app\admin\view\admin\edit.html";i:1768445431;}*/ ?>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>编辑管理员</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="/static/layui/css/layui.css" media="all">
+    <style>
+        body { background-color: #fff; padding: 20px; }
+    </style>
+</head>
+<body>
+<form class="layui-form" lay-filter="admin-form">
+    <input type="hidden" name="id" value="<?php echo htmlentities((string) (isset($admin['id']) && ($admin['id'] !== '')?$admin['id']:'')); ?>">
+    <div class="layui-form-item">
+        <label class="layui-form-label">用户名</label>
+        <div class="layui-input-block">
+            <input type="text" name="username" lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input" value="<?php echo htmlentities((string) (isset($admin['username']) && ($admin['username'] !== '')?$admin['username']:'')); ?>">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">密码</label>
+        <div class="layui-input-block">
+            <input type="password" name="password" placeholder="<?php if(isset($admin)): ?>不修改请留空<?php else: ?>请输入密码<?php endif; ?>" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">昵称</label>
+        <div class="layui-input-block">
+            <input type="text" name="nickname" placeholder="请输入昵称" autocomplete="off" class="layui-input" value="<?php echo htmlentities((string) (isset($admin['nickname']) && ($admin['nickname'] !== '')?$admin['nickname']:'')); ?>">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">邮箱</label>
+        <div class="layui-input-block">
+            <input type="text" name="email" placeholder="请输入邮箱" autocomplete="off" class="layui-input" value="<?php echo htmlentities((string) (isset($admin['email']) && ($admin['email'] !== '')?$admin['email']:'')); ?>">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">状态</label>
+        <div class="layui-input-block">
+            <input type="radio" name="status" value="1" title="正常" <?php if(!isset($admin) || $admin['status'] == 1): ?>checked<?php endif; ?>>
+            <input type="radio" name="status" value="0" title="禁用" <?php if(isset($admin) && $admin['status'] == 0): ?>checked<?php endif; ?>>
+        </div>
+    </div>
+    <div class="layui-form-item" style="text-align: right;">
+        <button class="layui-btn" lay-submit lay-filter="admin-submit" id="admin-submit">提交</button>
+    </div>
+</form>
+
+<script src="/static/layui/layui.js"></script>
+<script>
+layui.use(['form', 'jquery'], function(){
+    var form = layui.form;
+    var $ = layui.jquery;
+
+    // 监听提交
+    form.on('submit(admin-submit)', function(data){
+        var url = "<?php echo url('add'); ?>";
+        if("<?php echo htmlentities((string) (isset($admin['id']) && ($admin['id'] !== '')?$admin['id']:'')); ?>") {
+            url = "<?php echo url('edit'); ?>?id=<?php echo htmlentities((string) (isset($admin['id']) && ($admin['id'] !== '')?$admin['id']:'')); ?>";
+        }
+        
+        $.post(url, data.field, function(res){
+            if(res.code === 0){
+                parent.layer.msg(res.msg, {icon: 1, time: 1500}, function(){
+                    parent.layer.closeAll();
+                });
+            } else {
+                layer.msg(res.msg, {icon: 2});
+            }
+        }, 'json');
+        return false;
+    });
+});
+</script>
+</body>
+</html>

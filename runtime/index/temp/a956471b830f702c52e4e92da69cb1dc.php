@@ -1,0 +1,156 @@
+<?php /*a:1:{s:46:"E:\Users\web\tp\app\index\view\user\login.html";i:1768537195;}*/ ?>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>用户登录 - MoveCar</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="/static/layui/css/layui.css" media="all">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4f46e5;
+            --primary-hover: #4338ca;
+            --bg-gradient: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        }
+
+        body {
+            font-family: 'Outfit', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: var(--bg-gradient);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+        }
+
+        .login-container {
+            width: 400px;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 24px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .login-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .login-header h2 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 10px;
+        }
+
+        .login-header p {
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        .layui-form-item {
+            margin-bottom: 20px;
+        }
+
+        .layui-input {
+            height: 48px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            padding-left: 15px;
+            transition: all 0.3s;
+        }
+
+        .layui-input:focus {
+            border-color: var(--primary-color) !important;
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+        }
+
+        .btn-submit {
+            width: 100%;
+            height: 48px;
+            background: var(--primary-color) !important;
+            border-radius: 12px !important;
+            font-size: 16px;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        .btn-submit:hover {
+            background: var(--primary-hover) !important;
+        }
+
+        .register-link {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #64748b;
+        }
+
+        .register-link a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-container">
+    <div class="login-header">
+        <h2>欢迎回来</h2>
+        <p>登录您的 MoveCar 账号</p>
+    </div>
+
+    <form class="layui-form" action="">
+        <div class="layui-form-item">
+            <input type="text" name="username" lay-verify="required" placeholder="用户名" autocomplete="off" class="layui-input">
+        </div>
+        <div class="layui-form-item">
+            <input type="password" name="password" lay-verify="required" placeholder="密码" autocomplete="off" class="layui-input">
+        </div>
+        
+        <div style="margin-bottom: 20px; text-align: right;">
+            <a href="<?php echo url('login/forget'); ?>" style="color: #64748b; font-size: 14px; text-decoration: none;">忘记密码？</a>
+        </div>
+        
+        <div class="layui-form-item">
+            <button class="layui-btn btn-submit" lay-submit lay-filter="login">立即登录</button>
+        </div>
+    </form>
+
+    <div class="register-link">
+        还没有账号？ <a href="<?php echo url('user/register'); ?>">立即注册</a>
+    </div>
+</div>
+
+<script src="/static/layui/layui.js"></script>
+<script>
+layui.use(['form', 'layer', 'jquery'], function(){
+    var form = layui.form;
+    var layer = layui.layer;
+    var $ = layui.jquery;
+
+    // 监听提交
+    form.on('submit(login)', function(data){
+        var loadIndex = layer.load(2);
+        $.post("<?php echo url('login'); ?>", data.field, function(res){
+            layer.close(loadIndex);
+            if(res.code === 0){
+                layer.msg(res.msg, {icon: 1, time: 1500}, function(){
+                    location.href = res.url;
+                });
+            } else {
+                layer.msg(res.msg, {icon: 2});
+            }
+        }, 'json');
+        return false;
+    });
+});
+</script>
+</body>
+</html>

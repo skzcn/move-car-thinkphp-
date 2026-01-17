@@ -1,0 +1,30 @@
+[2026-01-17T17:21:26+08:00][sql] CONNECT:[ UseTime:0.000754s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-17T17:21:26+08:00][sql] SHOW FULL COLUMNS FROM `system_config` [ RunTime:0.005354s ]
+[2026-01-17T17:21:26+08:00][sql] SELECT `value`,`name` FROM `system_config` [ RunTime:0.000224s ]
+[2026-01-17T17:21:46+08:00][sql] CONNECT:[ UseTime:0.000732s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-17T17:21:46+08:00][sql] SHOW FULL COLUMNS FROM `system_config` [ RunTime:0.004498s ]
+[2026-01-17T17:21:46+08:00][sql] SELECT `value`,`name` FROM `system_config` [ RunTime:0.000218s ]
+[2026-01-17T17:26:29+08:00][sql] CONNECT:[ UseTime:0.000823s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-17T17:26:29+08:00][sql] SHOW FULL COLUMNS FROM `system_config` [ RunTime:0.003532s ]
+[2026-01-17T17:26:29+08:00][sql] SELECT `value`,`name` FROM `system_config` [ RunTime:0.000245s ]
+[2026-01-17T17:26:46+08:00][sql] CONNECT:[ UseTime:0.000732s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-17T17:26:46+08:00][sql] SHOW FULL COLUMNS FROM `system_config` [ RunTime:0.003499s ]
+[2026-01-17T17:26:46+08:00][sql] SELECT `value`,`name` FROM `system_config` [ RunTime:0.000200s ]
+[2026-01-17T17:26:50+08:00][sql] CONNECT:[ UseTime:0.000904s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-17T17:26:50+08:00][sql] SHOW FULL COLUMNS FROM `system_config` [ RunTime:0.007316s ]
+[2026-01-17T17:26:50+08:00][sql] SELECT `value`,`name` FROM `system_config` [ RunTime:0.000263s ]
+[2026-01-17T17:26:51+08:00][sql] CONNECT:[ UseTime:0.000718s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-17T17:26:51+08:00][sql] SHOW FULL COLUMNS FROM `system_config` [ RunTime:0.006000s ]
+[2026-01-17T17:26:51+08:00][sql] SELECT `value`,`name` FROM `system_config` [ RunTime:0.000215s ]
+[2026-01-17T17:27:05+08:00][sql] CONNECT:[ UseTime:0.000744s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-17T17:27:05+08:00][sql] SHOW FULL COLUMNS FROM `system_config` [ RunTime:0.008833s ]
+[2026-01-17T17:27:05+08:00][sql] SELECT `value`,`name` FROM `system_config` [ RunTime:0.000206s ]
+[2026-01-17T17:33:22+08:00][sql] CONNECT:[ UseTime:0.014504s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-17T17:33:22+08:00][sql] SHOW FULL COLUMNS FROM `system_config` [ RunTime:0.005382s ]
+[2026-01-17T17:33:22+08:00][sql] SELECT `value`,`name` FROM `system_config` [ RunTime:0.000202s ]
+[2026-01-17T17:33:42+08:00][sql] CONNECT:[ UseTime:0.000740s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-17T17:33:42+08:00][sql] SHOW FULL COLUMNS FROM `system_config` [ RunTime:0.006948s ]
+[2026-01-17T17:33:42+08:00][sql] SELECT `value`,`name` FROM `system_config` [ RunTime:0.000231s ]
+[2026-01-17T17:37:44+08:00][sql] CONNECT:[ UseTime:0.000793s ] mysql:host=127.0.0.1;port=3306;dbname=dd;charset=utf8
+[2026-01-17T17:37:44+08:00][sql] SHOW FULL COLUMNS FROM `system_config` [ RunTime:0.005231s ]
+[2026-01-17T17:37:44+08:00][sql] SELECT `value`,`name` FROM `system_config` [ RunTime:0.000316s ]
