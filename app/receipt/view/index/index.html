@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>转账单生成器</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="/static/layui/css/layui.css" media="all">
+    <link href="https://fonts.googleapis.com/css2?family=PingFang+SC:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body { margin: 0; padding: 0; height: 100vh; display: flex; background: #f0f2f5; font-family: 'PingFang SC', sans-serif; }
+        .left-panel { width: 50%; height: 100%; display: flex; justify-content: center; align-items: center; background: #333; overflow: hidden; }
+        .right-panel { width: 50%; height: 100%; padding: 20px; box-sizing: border-box; background: #fff; overflow-y: auto; }
+        
+        /* 手机预览样式 */
+        .phone-preview {
+            width: 375px;
+            height: 812px;
+            background: #fff;
+            position: relative;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            overflow: hidden;
+        }
+
+        #capture-area {
+            width: 100%;
+            height: 100%;
+            background-image: url('/11.jpg');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+
+        /* 绝对定位元素 */
+        .abs-text {
+            position: absolute;
+            color: #333;
+            font-size: 14px;
+            white-space: nowrap;
+            cursor: move; /* 允许拖动以调整位置 */
+            user-select: none;
+        }
+
+        /* 初始位置估计，需要根据图片调整 */
+        #preview-amount {
+            top: 200px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 40px;
+            font-weight: bold;
+            color: #000;
+        }
+
+        #preview-payee {
+            top: 300px;
+            left: 100px;
+            font-size: 16px;
+        }
+
+        #preview-time {
+            top: 350px;
+            left: 100px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        #preview-order-no {
+            top: 400px;
+            left: 100px;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+<div class="left-panel">
+    <div class="phone-preview">
+        <div id="capture-area">
+            <!-- 移除原有结构，改为绝对定位 -->
+            <div id="preview-amount" class="abs-text">1000.00</div>
+            <div id="preview-payee" class="abs-text">张三</div>
+            <div id="preview-time" class="abs-text">2023-10-01 12:00:00</div>
+            <div id="preview-order-no" class="abs-text">12345678902023100112345678901234</div>
+        </div>
+    </div>
+</div>
+
+<div class="right-panel">
+    <fieldset class="layui-elem-field layui-field-title">
+        <legend>转账单设置</legend>
+    </fieldset>
+    
+    <form class="layui-form" action="">
+        <div class="layui-form-item">
+            <label class="layui-form-label">背景图片</label>
+            <div class="layui-input-block">
+                <button type="button" class="layui-btn" id="btn-upload-bg">
+                    <i class="layui-icon">&#xe67c;</i>上传背景
+                </button>
+                <input type="file" id="file-input-bg" style="display: none;" accept="image/*">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">字体大小</label>
+            <div class="layui-input-block">
+                <div id="slide-font-size" style="top: 18px;"></div>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">字体颜色</label>
+            <div class="layui-input-block">
+                <div id="color-picker"></div>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">收款人</label>
+            <div class="layui-input-block">
+                <input type="text" name="payee" id="input-payee" value="张三" class="layui-input">
+            </div>
+        </div>
+        
+        <div class="layui-form-item">
+            <label class="layui-form-label">金额</label>
+            <div class="layui-input-block">
+                <input type="text" name="amount" id="input-amount" value="1000.00" class="layui-input">
+            </div>
+        </div>
+        
+        <div class="layui-form-item">
+            <label class="layui-form-label">转账时间</label>
+            <div class="layui-input-block">
+                <input type="text" name="time" id="input-time" class="layui-input" placeholder="选择时间">
+            </div>
+        </div>
+        
+        <div class="layui-form-item">
+            <label class="layui-form-label">订单号</label>
+            <div class="layui-input-block">
+                <div style="display: flex; gap: 10px;">
+                    <input type="text" name="order_no" id="input-order-no" class="layui-input" readonly>
+                    <button type="button" class="layui-btn layui-btn-normal" id="btn-generate-no">生成单号</button>
+                </div>
+                <div class="layui-word-aux">规则：前10位随机 + 8位日期 + 后14位随机</div>
+            </div>
+        </div>
+        
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button type="button" class="layui-btn layui-btn-fluid layui-btn-danger" id="btn-download">生成并下载图片</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script src="/static/layui/layui.js"></script>
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+<script>
+layui.use(['form', 'laydate', 'jquery', 'slider', 'colorpicker', 'upload'], function(){
+    var form = layui.form;
+    var laydate = layui.laydate;
+    var $ = layui.jquery;
+    var slider = layui.slider;
+    var colorpicker = layui.colorpicker;
+    
+    // 初始化时间
+    var now = new Date();
+    var nowStr = layui.util.toDateString(now, 'yyyy-MM-dd HH:mm:ss');
+    $('#input-time').val(nowStr);
+    updatePreview();
+    
+    // 背景图片上传
+    $('#btn-upload-bg').click(function(){
+        $('#file-input-bg').click();
+    });
+    
+    $('#file-input-bg').change(function(e){
+        var file = e.target.files[0];
+        if(file){
+            var reader = new FileReader();
+            reader.onload = function(e){
+                $('#capture-area').css('background-image', 'url(' + e.target.result + ')');
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+
+    // 字体大小滑块
+    slider.render({
+        elem: '#slide-font-size',
+        min: 12,
+        max: 60,
+        value: 14,
+        change: function(value){
+            // 默认调整所有，或者当前选中的（如果实现了选中逻辑）
+            // 这里简单起见，调整除了金额以外的文字，金额单独大一点
+            $('.abs-text').not('#preview-amount').css('font-size', value + 'px');
+            $('#preview-amount').css('font-size', (value * 2.5) + 'px');
+        }
+    });
+
+    // 颜色选择器
+    colorpicker.render({
+        elem: '#color-picker',
+        color: '#333333',
+        done: function(color){
+            $('.abs-text').css('color', color);
+        }
+    });
+    
+    // 时间选择器
+    laydate.render({
+        elem: '#input-time',
+        type: 'datetime',
+        done: function(value){
+            updatePreview();
+        }
+    });
+    
+    // 监听输入
+    $('#input-payee').on('input', updatePreview);
+    $('#input-amount').on('input', updatePreview);
+    
+    // 生成单号
+    $('#btn-generate-no').click(function(){
+        var timeStr = $('#input-time').val();
+        var datePart = timeStr.replace(/[- :]/g, '').substr(0, 8); // YYYYMMDD
+        
+        var prefix = generateRandomNum(10);
+        var suffix = generateRandomNum(14);
+        
+        var orderNo = prefix + datePart + suffix;
+        $('#input-order-no').val(orderNo);
+        updatePreview();
+    });
+    
+    // 初始生成一个单号
+    $('#btn-generate-no').click();
+    
+    function updatePreview(){
+        $('#preview-payee').text($('#input-payee').val());
+        $('#preview-amount').text($('#input-amount').val());
+        $('#preview-time').text($('#input-time').val());
+        $('#preview-order-no').text($('#input-order-no').val());
+    }
+    
+    function generateRandomNum(len){
+        var str = '';
+        for(var i=0; i<len; i++){
+            str += Math.floor(Math.random()*10);
+        }
+        return str;
+    }
+    
+    // 拖拽功能
+    var dragItem = null;
+    var startX, startY, initialLeft, initialTop;
+
+    $('.abs-text').on('mousedown', function(e){
+        dragItem = $(this);
+        startX = e.clientX;
+        startY = e.clientY;
+        var pos = dragItem.position();
+        initialLeft = pos.left;
+        initialTop = pos.top;
+        
+        $(document).on('mousemove', onMouseMove);
+        $(document).on('mouseup', onMouseUp);
+        return false;
+    });
+
+    function onMouseMove(e){
+        if(dragItem){
+            var dx = e.clientX - startX;
+            var dy = e.clientY - startY;
+            dragItem.css({
+                left: initialLeft + dx,
+                top: initialTop + dy,
+                transform: 'none'
+            });
+        }
+    }
+
+    function onMouseUp(){
+        dragItem = null;
+        $(document).off('mousemove', onMouseMove);
+        $(document).off('mouseup', onMouseUp);
+    }
+    
+    // 下载图片
+    $('#btn-download').click(function(){
+        var element = document.getElementById("capture-area");
+        html2canvas(element, {
+            scale: 2,
+            useCORS: true,
+            allowTaint: true // 允许跨域图片（本地文件）
+        }).then(function(canvas) {
+            var link = document.createElement('a');
+            link.download = 'receipt_' + new Date().getTime() + '.png';
+            link.href = canvas.toDataURL("image/png");
+            link.click();
+        });
+    });
+});
+</script>
+</body>
+</html>

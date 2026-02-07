@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>广告管理</title>
+    <link rel="stylesheet" href="/static/layui/css/layui.css" media="all">
+</head>
+<body style="padding: 20px;">
+    <div class="layui-card">
+        <div class="layui-card-header">广告列表</div>
+        <div class="layui-card-body">
+            <div style="padding-bottom: 10px;">
+                <button class="layui-btn layui-btn-normal" onclick="edit(0)">添加广告</button>
+            </div>
+            <table class="layui-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>标题</th>
+                        <th>图片</th>
+                        <th>链接</th>
+                        <th>排序</th>
+                        <th>状态</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {volist name="list" id="vo"}
+                    <tr>
+                        <td>{$vo.id}</td>
+                        <td>{$vo.title}</td>
+                        <td><img src="{$vo.image}" style="max-height: 30px;"></td>
+                        <td>{$vo.link}</td>
+                        <td>{$vo.sort}</td>
+                        <td>
+                            {if $vo.status == 1}
+                            <span class="layui-badge layui-bg-green">开启</span>
+                            {else}
+                            <span class="layui-badge layui-bg-gray">关闭</span>
+                            {/if}
+                        </td>
+                        <td>
+                            <button class="layui-btn layui-btn-xs" onclick="edit({$vo.id})">编辑</button>
+                            <button class="layui-btn layui-btn-danger layui-btn-xs" onclick="del({$vo.id})">删除</button>
+                        </td>
+                    </tr>
+                    {/volist}
+                </tbody>
+            </table>
+            {$list|raw}
+        </div>
+    </div>
+
+    <script src="/static/layui/layui.js"></script>
+    <script>
+    layui.use(['form', 'layer', 'jquery'], function(){
+        var form = layui.form;
+        var layer = layui.layer;
+        var $ = layui.jquery;
+
+        window.edit = function(id) {
+            layer.open({
+                type: 2,
+                title: id > 0 ? '编辑广告' : '添加广告',
+                content: "{:url('edit')}?id=" + id,
+                area: ['600px', '500px'],
+                end: function() {
+                    location.reload();
+                }
+            });
+        }
+
+        window.del = function(id) {
+            layer.confirm('确定删除吗？', function(index){
+                $.post("{:url('delete')}", {id: id}, function(res){
+                    if(res.code === 0){
+                        layer.msg(res.msg, {icon: 1, time: 1000}, function(){
+                            location.reload();
+                        });
+                    } else {
+                        layer.msg(res.msg, {icon: 2});
+                    }
+                });
+            });
+        }
+    });
+    </script>
+</body>
+</html>

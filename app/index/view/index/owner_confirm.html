@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+  <title>确认挪车</title>
+  <style>
+    body { font-family: -apple-system, sans-serif; background: linear-gradient(160deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+    .card { background: rgba(255,255,255,0.95); padding: 30px; border-radius: 32px; text-align: center; width: 100%; max-width: 420px; box-shadow: 0 20px 60px rgba(102, 126, 234, 0.3); }
+    .emoji { font-size: 60px; margin-bottom: 20px; display: block; }
+    h1 { font-size: 24px; color: #2d3748; margin-bottom: 10px; }
+    .map-section { background: #eef2ff; border-radius: 18px; padding: 15px; margin-bottom: 20px; display: none; }
+    .map-section.show { display: block; }
+    .map-links { display: flex; gap: 10px; }
+    .map-btn { flex: 1; padding: 12px; border-radius: 12px; text-decoration: none; color: white; font-weight: 600; font-size: 14px; }
+    .amap { background: #1890ff; }
+    .apple { background: #1d1d1f; }
+    .btn { background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; border: none; width: 100%; padding: 18px; border-radius: 18px; font-size: 18px; font-weight: 700; cursor: pointer; }
+    .done-msg { background: #d1fae5; border-radius: 18px; padding: 20px; margin-top: 20px; display: none; }
+    .done-msg.show { display: block; }
+  </style>
+</head>
+<body>
+    <div class="card">
+      <span class="emoji">👋</span>
+      <h1>收到挪车请求</h1>
+      <p style="color: #718096; margin-bottom: 20px;">对方正在等待，请尽快确认</p>
+
+      <div id="mapArea" class="map-section">
+        <p style="font-size: 14px; color: #6366f1; margin-bottom: 10px;">📍 对方位置</p>
+        <div class="map-links">
+          <a id="amapLink" href="#" class="map-btn amap">高德地图</a>
+          <a id="appleLink" href="#" class="map-btn apple">Apple Maps</a>
+        </div>
+      </div>
+
+      <button id="confirmBtn" class="btn" onclick="confirmMove()">🚀 我已知晓，正在前往</button>
+
+      <div id="doneMsg" class="done-msg">
+        <p style="color: #065f46; font-weight: 600;">✅ 已通知对方您正在赶来！</p>
+      </div>
+    </div>
+
+    <script>
+      const username = "{$user.username}";
+      let ownerLocation = null;
+
+      window.onload = async () => {
+        const res = await fetch("{:url('api/getLocation')}?u=" + username);
+        if(res.ok) {
+          const data = await res.json();
+          if(data.amapUrl) {
+            document.getElementById('mapArea').classList.add('show');
+            document.getElementById('amapLink').href = data.amapUrl;
+            document.getElementById('appleLink').href = data.appleUrl;
+          }
+        }
+      }
+
+      async function confirmMove() {
+        const btn = document.getElementById('confirmBtn');
+        btn.disabled = true;
+        btn.innerText = '获取位置中...';
+
+        if ('geolocation' in navigator) {
+          navigator.geolocation.getCurrentPosition(async (pos) => {
+            ownerLocation = { lat: pos.coords.latitude, lng: pos.coords.longitude };
+            await doConfirm();
+          }, async (err) => {
+            await doConfirm();
+          });
+        } else {
+          await doConfirm();
+        }
+      }
+
+      async function doConfirm() {
+        await fetch("{:url('api/ownerConfirmAction')}", {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams({ location: JSON.stringify(ownerLocation), username: username })
+        });
+        document.getElementById('confirmBtn').style.display = 'none';
+        document.getElementById('doneMsg').classList.add('show');
+      }
+    </script>
+</body>
+</html>

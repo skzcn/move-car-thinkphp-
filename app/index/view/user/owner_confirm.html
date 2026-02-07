@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+  <title>确认挪车</title>
+  <link rel="stylesheet" href="/static/layui/css/layui.css" media="all">
+  <style>
+    body { font-family: -apple-system, sans-serif; background: linear-gradient(160deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+    .card { background: rgba(255,255,255,0.95); padding: 30px; border-radius: 32px; text-align: center; width: 100%; max-width: 420px; box-shadow: 0 20px 60px rgba(102, 126, 234, 0.3); }
+    .emoji { font-size: 60px; margin-bottom: 20px; display: block; }
+    h1 { font-size: 24px; color: #2d3748; margin-bottom: 10px; }
+    .map-section { background: #eef2ff; border-radius: 18px; padding: 15px; margin-bottom: 20px; display: none; }
+    .map-section.show { display: block; }
+    .map-links { display: flex; gap: 10px; }
+    .map-btn { flex: 1; padding: 12px; border-radius: 12px; text-decoration: none; color: white; font-weight: 600; font-size: 14px; }
+    .amap { background: #1890ff; }
+    .apple { background: #1d1d1f; }
+    .btn { background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; border: none; width: 100%; padding: 18px; border-radius: 18px; font-size: 18px; font-weight: 700; cursor: pointer; }
+    .done-msg { background: #d1fae5; border-radius: 18px; padding: 20px; margin-top: 20px; display: none; }
+    .done-msg.show { display: block; }
+    .loc-status-mini { font-size: 12px; margin-top: 10px; color: #718096; }
+    .btn-retry-mini { font-size: 12px; color: #6366f1; cursor: pointer; text-decoration: underline; margin-left: 5px; display: none; }
+    .btn:disabled { opacity: 0.7; cursor: not-allowed; }
+
+    /* 广告样式 */
+    .ad-container { margin-top: 20px; border-radius: 24px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); background: #fff; width: 100%; max-width: 420px; }
+    .ad-item { display: block; width: 100%; height: 100%; }
+    .ad-item img { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 24px; }
+    #adCarousel { background-color: transparent; min-height: 120px; }
+    #adCarousel [carousel-item] > div { background-color: transparent; }
+  </style>
+</head>
+<body>
+    <div class="card">
+      <span class="emoji">👋</span>
+      <h1>收到挪车请求</h1>
+      <p style="color: #718096; margin-bottom: 20px;">对方正在等待，请尽快确认</p>
+
+      <div id="mapArea" class="map-section">
+        <p style="font-size: 14px; color: #6366f1; margin-bottom: 10px;">📍 对方位置</p>
+        <div class="map-links">
+          <a id="amapLink" href="#" class="map-btn amap">高德地图</a>
+          <a id="appleLink" href="#" class="map-btn apple">Apple Maps</a>
+        </div>
+      </div>
+
+      <button id="confirmBtn" class="btn" onclick="confirmMove()">🚀 我已知晓，正在前往</button>
+      <div id="locStatusWrap" class="loc-status-mini">
+        <span id="locStatusText"></span>
+        <span id="retryLocBtn" class="btn-retry-mini" onclick="getOwnerLocation()">重试</span>
+      </div>
+
+      <div id="doneMsg" class="done-msg">
+        <p style="color: #065f46; font-weight: 600;">✅ 已通知对方您正在赶来！</p>
+      </div>
+    </div>
+
+    {if count($ads) > 0}
+    <div class="ad-container" style="min-height: 120px; background: #f8fafc;">
+      {if count($ads) == 1}
+        {php}$ad = $ads[0];{/php}
+        <a href="{$ad.link ?: 'javascript:;'}" {if !empty($ad.link)}target="_blank"{/if} class="ad-item">
+          <img src="{$ad.image}" alt="{$ad.title}" style="width: 100%; height: 120px; object-fit: cover; border-radius: 24px;">
+        </a>
+      {else}
+        <div class="layui-carousel" id="adCarousel">
+          <div carousel-item>
+            {volist name="ads" id="ad"}
+            <div>
+              <a href="{$ad.link ?: 'javascript:;'}" {if !empty($ad.link)}target="_blank"{/if} class="ad-item">
+                <img src="{$ad.image}" alt="{$ad.title}" style="width: 100%; height: 120px; object-fit: cover; border-radius: 24px;">
+              </a>
+            </div>
+            {/volist}
+          </div>
+        </div>
+      {/if}
+    </div>
+    {/if}
+
+    <script src="/static/layui/layui.js"></script>
+    {if !empty($mapConfig.amap.js_api_key)}
+    <script type="text/javascript">
+        window._AMapSecurityConfig = {
+            securityJsCode: '{$mapConfig.amap.security_code}'
+        }
+    </script>
+    <script src="https://webapi.amap.com/maps?v=2.0&key={$mapConfig.amap.js_api_key}"></script>
+    {/if}
+    <script>
+      layui.use(['carousel', 'jquery'], function(){
+        var carousel = layui.carousel;
+        var $ = layui.jquery;
+        var adsCount = Number("{:count($ads ?? [])}");
+        
+        if (adsCount > 1 && $('#adCarousel').length > 0) {
+          carousel.render({
+            elem: '#adCarousel',
+            width: '100%',
+            height: '120px',
+            arrow: 'hover',
+            indicator: 'inside',
+            autoplay: true,
+            interval: 3000
+          });
+        }
+      });
+      const username = "{$user.username}";
+      let ownerLocation = null;
+      const amapKey = "{$mapConfig.amap.js_api_key ?? ''}";
+
+      window.onload = async () => {
+        const res = await fetch("{:url('api/getLocation')}?u=" + username);
+        if(res.ok) {
+          const data = await res.json();
+          if(data.amapUrl) {
+            document.getElementById('mapArea').classList.add('show');
+            document.getElementById('amapLink').href = data.amapUrl;
+            document.getElementById('appleLink').href = data.appleUrl;
+          }
+        }
+      }
+
+      async function confirmMove() {
+        const btn = document.getElementById('confirmBtn');
+        btn.disabled = true;
+        btn.innerText = '正在确认...';
+        await getOwnerLocation();
+      }
+
+      async function getOwnerLocation(retryWithLowAccuracy = false) {
+        const statusText = document.getElementById('locStatusText');
+        const retryBtn = document.getElementById('retryLocBtn');
+        
+        statusText.innerText = retryWithLowAccuracy ? '尝试普通定位...' : '正在尝试获取您的位置...';
+        retryBtn.style.display = 'none';
+
+        // HTTPS check
+        if (!window.isSecureContext && window.location.hostname !== 'localhost' && window.location.protocol !== 'https:') {
+          statusText.innerText = '环境不支持定位(需HTTPS)';
+          retryBtn.style.display = 'inline';
+          await doConfirm();
+          return;
+        }
+
+        // Try Amap first if available
+        if (amapKey && window.AMap) {
+            AMap.plugin('AMap.Geolocation', function() {
+                var geolocation = new AMap.Geolocation({
+                    enableHighAccuracy: !retryWithLowAccuracy,
+                    timeout: 10000,
+                });
+                geolocation.getCurrentPosition(function(status, result){
+                    if(status=='complete'){
+                        onLocationSuccess({ coords: { latitude: result.position.lat, longitude: result.position.lng } });
+                    }else{
+                        onLocationError({ code: 'AMAP_ERROR', message: result.message }, retryWithLowAccuracy);
+                    }
+                });
+            });
+            return;
+        }
+
+        if ('geolocation' in navigator) {
+          navigator.geolocation.getCurrentPosition(
+            onLocationSuccess,
+            (err) => onLocationError(err, retryWithLowAccuracy),
+            { timeout: 10000, enableHighAccuracy: !retryWithLowAccuracy, maximumAge: retryWithLowAccuracy ? 60000 : 0 }
+          );
+        } else {
+          statusText.innerText = '浏览器不支持定位';
+          await doConfirm();
+        }
+      }
+
+      async function onLocationSuccess(pos) {
+        ownerLocation = { lat: pos.coords.latitude, lng: pos.coords.longitude };
+        document.getElementById('locStatusText').innerText = '位置已获取';
+        await doConfirm();
+      }
+
+      async function onLocationError(err, isLowAccuracy) {
+        const statusText = document.getElementById('locStatusText');
+        const retryBtn = document.getElementById('retryLocBtn');
+        
+        console.error('Location error:', err);
+
+        if (!isLowAccuracy) {
+            // Retry with low accuracy
+            getOwnerLocation(true);
+            return;
+        }
+
+        let msg = '位置获取失败';
+        if (err.code === 1) msg = '请允许位置权限';
+        else if (err.code === 2) msg = '位置不可用';
+        else if (err.code === 3) msg = '获取超时';
+        else if (err.code === 'AMAP_ERROR') msg = '定位失败';
+
+        statusText.innerText = msg;
+        retryBtn.style.display = 'inline';
+        await doConfirm(); // 即使失败也允许确认，只是对方看不到位置
+      }
+
+      async function doConfirm() {
+        await fetch("{:url('api/ownerConfirmAction')}", {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams({ location: JSON.stringify(ownerLocation), username: username })
+        });
+        document.getElementById('confirmBtn').style.display = 'none';
+        document.getElementById('doneMsg').classList.add('show');
+      }
+    </script>
+</body>
+</html>
